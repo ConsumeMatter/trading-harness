@@ -8,3 +8,13 @@
 {"timestamp": "2026-08-28T01:37:50.095262", "event": "no_action", "prices": {"CEG": 98.64, "TSM": 94.47, "VGT": 99.26}}
 {"timestamp": "2026-08-28T01:37:50.095332", "event": "breaker_check", "ok": true, "detail": "ok, down 0.0% today", "account_value": 1000.0}
 {"timestamp": "2026-08-28T01:37:50.095371", "event": "no_action", "prices": {"CEG": 95.84, "TSM": 92.76, "VGT": 100.15}}
+{"timestamp": "2026-08-31T08:04:57.140267", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 1000.0}
+{"timestamp": "2026-08-31T08:04:57.140548", "event": "no_action", "prices": {"CEG": 100.84, "TSM": 97.15, "VGT": 98.65}}
+{"timestamp": "2026-08-31T08:04:57.140641", "event": "breaker_check", "ok": true, "detail": "ok, down 0.0% today", "account_value": 1000.0}
+{"timestamp": "2026-08-31T08:04:57.140685", "event": "no_action", "prices": {"CEG": 99.17, "TSM": 98.53, "VGT": 99.7}}
+{"timestamp": "2026-08-31T08:04:57.140728", "event": "breaker_check", "ok": true, "detail": "ok, down 0.0% today", "account_value": 1000.0}
+{"timestamp": "2026-08-31T08:04:57.140762", "event": "no_action", "prices": {"CEG": 101.5, "TSM": 96.09, "VGT": 99.23}}
+{"timestamp": "2026-08-31T08:04:57.140818", "event": "breaker_check", "ok": true, "detail": "ok, down 0.0% today", "account_value": 1000.0}
+{"timestamp": "2026-08-31T08:04:57.140858", "event": "no_action", "prices": {"CEG": 98.64, "TSM": 94.47, "VGT": 99.26}}
+{"timestamp": "2026-08-31T08:04:57.140911", "event": "breaker_check", "ok": true, "detail": "ok, down 0.0% today", "account_value": 1000.0}
+{"timestamp": "2026-08-31T08:04:57.140941", "event": "no_action", "prices": {"CEG": 95.84, "TSM": 92.76, "VGT": 100.15}}
