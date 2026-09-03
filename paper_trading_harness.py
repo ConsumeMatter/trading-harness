@@ -135,6 +135,15 @@ class MockBroker:
 # TODO (Claude Code, later): class RobinhoodBroker with the same four
 # methods, backed by real Robinhood Trading MCP tool calls instead of
 # in-memory math. Nothing below this line should need to change.
+#
+# !! WHEN YOU ADD RobinhoodBroker: the __main__ block below sets
+# !! cfg.require_human_approval = False as a paper-mode-only override, so
+# !! MockBroker runs auto-execute and produces a real track record instead
+# !! of every signal dead-ending at "awaiting_approval" forever. That
+# !! override MUST be removed (or set back to True) the moment
+# !! RobinhoodBroker replaces MockBroker in __main__. Real money must
+# !! never execute without a real, interactive approval step -- and no
+# !! such step exists yet. Do not skip this when doing the broker swap.
 
 
 # ---------------------------------------------------------------------------
@@ -368,6 +377,16 @@ def tick(config: Config, broker: MockBroker, breaker: CircuitBreaker,
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     cfg = Config()
+
+    # PAPER-MODE-ONLY OVERRIDE. Config's real default is True (mirrors
+    # Robinhood's approval-required mode) -- but no interactive approval
+    # step exists yet, so leaving it True here just means every signal
+    # logs "awaiting_approval" and nothing ever actually trades, forever.
+    # Auto-execute against MockBroker so a real (fake-money) track record
+    # accumulates. See the loud warning above RobinhoodBroker's TODO:
+    # this line must go away the moment real money is involved.
+    cfg.require_human_approval = False
+
     params = StrategyParams()
 
     state = load_portfolio_state(cfg)
