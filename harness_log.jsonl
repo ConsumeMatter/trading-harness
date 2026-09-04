@@ -158,3 +158,13 @@
 {"timestamp": "2026-09-04T08:17:46.559407", "event": "order_result", "decision": {"ticker": "CEG", "side": "buy", "dollar_amount": 54.58, "reason": "CEG up 2.79% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "CEG", "side": "buy", "shares": 0.5787, "price": 94.32}}
 {"timestamp": "2026-09-04T08:17:46.559514", "event": "breaker_check", "ok": true, "detail": "ok, down -0.3% today", "account_value": 998.07}
 {"timestamp": "2026-09-04T08:17:46.559636", "event": "no_action", "prices": {"CEG": 95.19, "TSM": 86.44, "VGT": 116.58}}
+{"timestamp": "2026-09-04T12:26:19.155701", "event": "breaker_check", "ok": true, "detail": "ok, down -0.3% today", "account_value": 998.54}
+{"timestamp": "2026-09-04T12:26:19.156140", "event": "order_result", "decision": {"ticker": "TSM", "side": "sell", "dollar_amount": 12.65, "reason": "TSM down -2.76% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "TSM", "side": "sell", "shares": 0.1505, "price": 84.05}}
+{"timestamp": "2026-09-04T12:26:19.156318", "event": "breaker_check", "ok": true, "detail": "ok, down -1.0% today", "account_value": 1004.81}
+{"timestamp": "2026-09-04T12:26:19.156418", "event": "no_action", "prices": {"CEG": 98.66, "TSM": 85.68, "VGT": 117.84}}
+{"timestamp": "2026-09-04T12:26:19.156560", "event": "breaker_check", "ok": true, "detail": "ok, down -1.5% today", "account_value": 1010.16}
+{"timestamp": "2026-09-04T12:26:19.156675", "event": "no_action", "prices": {"CEG": 98.33, "TSM": 85.07, "VGT": 116.55}}
+{"timestamp": "2026-09-04T12:26:19.156784", "event": "breaker_check", "ok": true, "detail": "ok, down -1.2% today", "account_value": 1006.78}
+{"timestamp": "2026-09-04T12:26:19.156899", "event": "no_action", "prices": {"CEG": 96.44, "TSM": 84.14, "VGT": 117.61}}
+{"timestamp": "2026-09-04T12:26:19.157013", "event": "breaker_check", "ok": true, "detail": "ok, down -0.8% today", "account_value": 1003.24}
+{"timestamp": "2026-09-04T12:26:19.157112", "event": "order_result", "decision": {"ticker": "TSM", "side": "buy", "dollar_amount": 50.38, "reason": "TSM up 2.03% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "TSM", "side": "buy", "shares": 0.5868, "price": 85.85}}
