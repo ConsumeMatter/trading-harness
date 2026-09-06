@@ -258,3 +258,13 @@
 {"timestamp": "2026-09-06T00:17:54.532079", "event": "no_action", "prices": {"CEG": 96.81, "TSM": 72.38, "VGT": 128.75}}
 {"timestamp": "2026-09-06T00:17:54.532246", "event": "breaker_check", "ok": true, "detail": "ok, down 1.1% today", "account_value": 995.92}
 {"timestamp": "2026-09-06T00:17:54.532381", "event": "order_result", "decision": {"ticker": "CEG", "side": "buy", "dollar_amount": 53.25, "reason": "CEG up 2.84% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "CEG", "side": "buy", "shares": 0.5349, "price": 99.56}}
+{"timestamp": "2026-09-06T04:17:46.721392", "event": "breaker_check", "ok": true, "detail": "ok, down 0.9% today", "account_value": 997.15}
+{"timestamp": "2026-09-06T04:17:46.722079", "event": "no_action", "prices": {"CEG": 97.61, "TSM": 71.08, "VGT": 127.28}}
+{"timestamp": "2026-09-06T04:17:46.722202", "event": "breaker_check", "ok": true, "detail": "ok, down 1.5% today", "account_value": 991.38}
+{"timestamp": "2026-09-06T04:17:46.722350", "event": "no_action", "prices": {"CEG": 96.91, "TSM": 71.63, "VGT": 129.33}}
+{"timestamp": "2026-09-06T04:17:46.722440", "event": "breaker_check", "ok": true, "detail": "ok, down 1.1% today", "account_value": 995.25}
+{"timestamp": "2026-09-06T04:17:46.722628", "event": "no_action", "prices": {"CEG": 97.97, "TSM": 70.28, "VGT": 126.85}}
+{"timestamp": "2026-09-06T04:17:46.722756", "event": "breaker_check", "ok": true, "detail": "ok, down 1.6% today", "account_value": 990.33}
+{"timestamp": "2026-09-06T04:17:46.722866", "event": "order_result", "decision": {"ticker": "VGT", "side": "buy", "dollar_amount": 47.93, "reason": "VGT up 2.96% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "VGT", "side": "buy", "shares": 0.367, "price": 130.6}}
+{"timestamp": "2026-09-06T04:17:46.723047", "event": "breaker_check", "ok": true, "detail": "ok, down 1.0% today", "account_value": 996.45}
+{"timestamp": "2026-09-06T04:17:46.723157", "event": "no_action", "prices": {"CEG": 95.71, "TSM": 73.43, "VGT": 132.48}}
