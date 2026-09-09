@@ -478,3 +478,13 @@
 {"timestamp": "2026-09-09T16:18:07.503923", "event": "order_result", "decision": {"ticker": "VGT", "side": "buy", "dollar_amount": 60.03, "reason": "VGT up 2.75% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "VGT", "side": "buy", "shares": 0.491, "price": 122.27}}
 {"timestamp": "2026-09-09T16:18:07.504057", "event": "breaker_check", "ok": true, "detail": "ok, down 1.2% today", "account_value": 959.98}
 {"timestamp": "2026-09-09T16:18:07.504156", "event": "no_action", "prices": {"CEG": 98.01, "TSM": 47.77, "VGT": 123.83}}
+{"timestamp": "2026-09-09T20:17:52.713418", "event": "breaker_check", "ok": true, "detail": "ok, down 0.9% today", "account_value": 962.38}
+{"timestamp": "2026-09-09T20:17:52.714059", "event": "no_action", "prices": {"CEG": 97.67, "TSM": 48.04, "VGT": 123.66}}
+{"timestamp": "2026-09-09T20:17:52.714158", "event": "breaker_check", "ok": true, "detail": "ok, down 1.0% today", "account_value": 961.77}
+{"timestamp": "2026-09-09T20:17:52.714303", "event": "order_result", "decision": {"ticker": "CEG", "side": "buy", "dollar_amount": 54.02, "reason": "CEG up 2.94% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "CEG", "side": "buy", "shares": 0.5373, "price": 100.54}}
+{"timestamp": "2026-09-09T20:17:52.714455", "event": "breaker_check", "ok": true, "detail": "ok, down 1.0% today", "account_value": 961.95}
+{"timestamp": "2026-09-09T20:17:52.714601", "event": "order_result", "decision": {"ticker": "VGT", "side": "buy", "dollar_amount": 48.62, "reason": "VGT up 2.97% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "VGT", "side": "buy", "shares": 0.3866, "price": 125.76}}
+{"timestamp": "2026-09-09T20:17:52.714690", "event": "breaker_check", "ok": true, "detail": "ok, down 0.4% today", "account_value": 967.62}
+{"timestamp": "2026-09-09T20:17:52.714806", "event": "order_result", "decision": {"ticker": "CEG", "side": "sell", "dollar_amount": 96.44, "reason": "CEG down -2.97% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "CEG", "side": "sell", "shares": 0.996, "price": 96.83}}
+{"timestamp": "2026-09-09T20:17:52.714984", "event": "breaker_check", "ok": true, "detail": "ok, down 1.0% today", "account_value": 961.78}
+{"timestamp": "2026-09-09T20:17:52.715262", "event": "order_result", "decision": {"ticker": "VGT", "side": "buy", "dollar_amount": 53.4, "reason": "VGT up 2.32% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "VGT", "side": "buy", "shares": 0.4148, "price": 128.73}}
