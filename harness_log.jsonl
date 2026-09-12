@@ -628,3 +628,13 @@
 {"timestamp": "2026-09-12T04:17:54.211629", "event": "no_action", "prices": {"CEG": 111.07, "TSM": 46.55, "VGT": 118.45}}
 {"timestamp": "2026-09-12T04:17:54.211717", "event": "breaker_check", "ok": true, "detail": "ok, down -4.0% today", "account_value": 999.36}
 {"timestamp": "2026-09-12T04:17:54.211771", "event": "order_result", "decision": {"ticker": "CEG", "side": "sell", "dollar_amount": 236.93, "reason": "CEG down -2.89% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "CEG", "side": "sell", "shares": 2.1966, "price": 107.86}}
+{"timestamp": "2026-09-12T08:17:59.912932", "event": "breaker_check", "ok": true, "detail": "ok, down -2.5% today", "account_value": 985.18}
+{"timestamp": "2026-09-12T08:17:59.913468", "event": "no_action", "prices": {"CEG": 106.94, "TSM": 47.27, "VGT": 115.88}}
+{"timestamp": "2026-09-12T08:17:59.913620", "event": "breaker_check", "ok": true, "detail": "ok, down -2.2% today", "account_value": 981.96}
+{"timestamp": "2026-09-12T08:17:59.913751", "event": "order_result", "decision": {"ticker": "CEG", "side": "sell", "dollar_amount": 114.62, "reason": "CEG down -2.41% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "CEG", "side": "sell", "shares": 1.0983, "price": 104.36}}
+{"timestamp": "2026-09-12T08:17:59.913993", "event": "breaker_check", "ok": true, "detail": "ok, down -1.4% today", "account_value": 974.31}
+{"timestamp": "2026-09-12T08:17:59.914115", "event": "no_action", "prices": {"CEG": 104.68, "TSM": 46.39, "VGT": 114.6}}
+{"timestamp": "2026-09-12T08:17:59.914209", "event": "breaker_check", "ok": true, "detail": "ok, down -1.4% today", "account_value": 974.64}
+{"timestamp": "2026-09-12T08:17:59.914294", "event": "no_action", "prices": {"CEG": 106.58, "TSM": 46.91, "VGT": 116.86}}
+{"timestamp": "2026-09-12T08:17:59.914398", "event": "breaker_check", "ok": true, "detail": "ok, down -1.9% today", "account_value": 979.13}
+{"timestamp": "2026-09-12T08:17:59.914477", "event": "no_action", "prices": {"CEG": 106.75, "TSM": 47.15, "VGT": 118.22}}
