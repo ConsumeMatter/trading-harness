@@ -728,3 +728,13 @@
 {"timestamp": "2026-09-13T20:17:56.232373", "event": "no_action", "prices": {"CEG": 107.96, "TSM": 39.4, "VGT": 137.48}}
 {"timestamp": "2026-09-13T20:17:56.232501", "event": "breaker_check", "ok": true, "detail": "ok, down 0.3% today", "account_value": 986.76}
 {"timestamp": "2026-09-13T20:17:56.232615", "event": "order_result", "decision": {"ticker": "VGT", "side": "buy", "dollar_amount": 61.5, "reason": "VGT up 2.31% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "VGT", "side": "buy", "shares": 0.4373, "price": 140.65}}
+{"timestamp": "2026-09-14T00:18:05.118401", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 991.84}
+{"timestamp": "2026-09-14T00:18:05.119057", "event": "no_action", "prices": {"CEG": 109.05, "TSM": 39.8, "VGT": 141.39}}
+{"timestamp": "2026-09-14T00:18:05.119162", "event": "breaker_check", "ok": true, "detail": "ok, down -0.3% today", "account_value": 995.04}
+{"timestamp": "2026-09-14T00:18:05.119253", "event": "no_action", "prices": {"CEG": 110.08, "TSM": 39.01, "VGT": 138.67}}
+{"timestamp": "2026-09-14T00:18:05.119364", "event": "breaker_check", "ok": true, "detail": "ok, down 0.3% today", "account_value": 988.83}
+{"timestamp": "2026-09-14T00:18:05.119458", "event": "order_result", "decision": {"ticker": "CEG", "side": "buy", "dollar_amount": 55.35, "reason": "CEG up 2.82% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "CEG", "side": "buy", "shares": 0.489, "price": 113.18}}
+{"timestamp": "2026-09-14T00:18:05.119543", "event": "breaker_check", "ok": true, "detail": "ok, down -0.6% today", "account_value": 997.5}
+{"timestamp": "2026-09-14T00:18:05.119615", "event": "no_action", "prices": {"CEG": 113.26, "TSM": 39.17, "VGT": 142.36}}
+{"timestamp": "2026-09-14T00:18:05.119714", "event": "breaker_check", "ok": true, "detail": "ok, down -0.7% today", "account_value": 999.24}
+{"timestamp": "2026-09-14T00:18:05.119787", "event": "order_result", "decision": {"ticker": "VGT", "side": "buy", "dollar_amount": 49.81, "reason": "VGT up 2.58% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "VGT", "side": "buy", "shares": 0.3411, "price": 146.04}}
