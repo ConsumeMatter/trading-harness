@@ -818,3 +818,13 @@
 {"timestamp": "2026-09-15T08:17:32.706296", "event": "no_action", "prices": {"CEG": 96.63, "TSM": 42.06, "VGT": 133.15}}
 {"timestamp": "2026-09-15T08:17:32.706426", "event": "breaker_check", "ok": true, "detail": "ok, down 0.1% today", "account_value": 1004.5}
 {"timestamp": "2026-09-15T08:17:32.706565", "event": "order_result", "decision": {"ticker": "CEG", "side": "sell", "dollar_amount": 0.57, "reason": "CEG down -2.56% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "CEG", "side": "sell", "shares": 0.0061, "price": 94.16}}
+{"timestamp": "2026-09-15T16:17:42.882829", "event": "breaker_check", "ok": true, "detail": "ok, down 0.1% today", "account_value": 1004.62}
+{"timestamp": "2026-09-15T16:17:42.883487", "event": "no_action", "prices": {"CEG": 95.99, "TSM": 41.39, "VGT": 134.58}}
+{"timestamp": "2026-09-15T16:17:42.883636", "event": "breaker_check", "ok": true, "detail": "ok, down 0.3% today", "account_value": 1002.11}
+{"timestamp": "2026-09-15T16:17:42.883790", "event": "order_result", "decision": {"ticker": "CEG", "side": "buy", "dollar_amount": 69.68, "reason": "CEG up 2.95% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "CEG", "side": "buy", "shares": 0.7051, "price": 98.82}}
+{"timestamp": "2026-09-15T16:17:42.883949", "event": "breaker_check", "ok": true, "detail": "ok, down 0.8% today", "account_value": 997.64}
+{"timestamp": "2026-09-15T16:17:42.884052", "event": "order_result", "decision": {"ticker": "TSM", "side": "buy", "dollar_amount": 62.71, "reason": "TSM up 2.46% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "TSM", "side": "buy", "shares": 1.506, "price": 41.64}}
+{"timestamp": "2026-09-15T16:17:42.884232", "event": "breaker_check", "ok": true, "detail": "ok, down 0.5% today", "account_value": 1000.39}
+{"timestamp": "2026-09-15T16:17:42.884312", "event": "no_action", "prices": {"CEG": 99.78, "TSM": 41.91, "VGT": 130.49}}
+{"timestamp": "2026-09-15T16:17:42.884403", "event": "breaker_check", "ok": true, "detail": "ok, down 0.3% today", "account_value": 1002.94}
+{"timestamp": "2026-09-15T16:17:42.884467", "event": "no_action", "prices": {"CEG": 98.1, "TSM": 42.19, "VGT": 129.39}}
