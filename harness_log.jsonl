@@ -1079,3 +1079,13 @@
 {"timestamp": "2026-09-19T20:06:39.416028", "event": "no_action", "prices": {"TSM": 60.75, "XLK": 96.33, "CAT": 100.74, "XLE": 98.4}}
 {"timestamp": "2026-09-19T20:06:39.416126", "event": "breaker_check", "ok": true, "detail": "ok, down -0.4% today", "account_value": 1161.05}
 {"timestamp": "2026-09-19T20:06:39.416228", "event": "no_action", "prices": {"TSM": 61.92, "XLK": 96.55, "CAT": 102.19, "XLE": 101.34}}
+{"timestamp": "2026-09-19T20:18:21.897626", "event": "breaker_check", "ok": true, "detail": "ok, down -0.7% today", "account_value": 1164.27}
+{"timestamp": "2026-09-19T20:18:21.897861", "event": "order_result", "decision": {"ticker": "XLK", "side": "buy", "dollar_amount": 99.37, "reason": "XLK up 2.56% since last tick, above +2% threshold"}, "result": {"status": "filled", "ticker": "XLK", "side": "buy", "shares": 1.0035, "price": 99.02}}
+{"timestamp": "2026-09-19T20:18:21.898013", "event": "breaker_check", "ok": true, "detail": "ok, down -1.0% today", "account_value": 1167.99}
+{"timestamp": "2026-09-19T20:18:21.898204", "event": "no_action", "prices": {"TSM": 61.76, "XLK": 97.87, "CAT": 100.76, "XLE": 97.29}}
+{"timestamp": "2026-09-19T20:18:21.898339", "event": "breaker_check", "ok": true, "detail": "ok, down -0.6% today", "account_value": 1162.67}
+{"timestamp": "2026-09-19T20:18:21.898493", "event": "order_result", "decision": {"ticker": "XLK", "side": "sell", "dollar_amount": 47.66, "reason": "XLK down -2.94% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "XLK", "side": "sell", "shares": 0.5017, "price": 94.99}}
+{"timestamp": "2026-09-19T20:18:21.898612", "event": "breaker_check", "ok": true, "detail": "ok, down -0.2% today", "account_value": 1158.57}
+{"timestamp": "2026-09-19T20:18:21.898714", "event": "no_action", "prices": {"TSM": 62.75, "XLK": 97.27, "CAT": 98.3, "XLE": 94.16}}
+{"timestamp": "2026-09-19T20:18:21.898835", "event": "breaker_check", "ok": true, "detail": "ok, down -0.7% today", "account_value": 1163.65}
+{"timestamp": "2026-09-19T20:18:21.898930", "event": "no_action", "prices": {"TSM": 61.98, "XLK": 97.01, "CAT": 100.23, "XLE": 96.51}}
