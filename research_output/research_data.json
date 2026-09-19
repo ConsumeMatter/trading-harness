@@ -4,7 +4,7 @@
     "source": "dotchev/top-stox (weekly) + whchien/ai-trader (TSM daily)",
     "date_range": "2022-01-17 \u2013 2025-12-15",
     "n_weeks": 205,
-    "generated": "2026-09-19 19:13:14.520584",
+    "generated": "2026-09-19 19:52:17.715804",
     "tickers_loaded": [
       "NVDA",
       "CEG",
@@ -2028,12 +2028,12 @@
     }
   ],
   "recommended_harness_config": {
-    "note": "Top momentum picks by Sharpe, weekly-data backtest 2021-2026",
+    "note": "Best momentum picks within 2\u20133% threshold band, weekly-data backtest 2022-2025",
     "tickers": [
-      "JPM",
       "TSM",
-      "XLK"
+      "XLK",
+      "CAT"
     ],
-    "buy_threshold_pct": 0.01
+    "buy_threshold_pct": 0.025
   }
 }

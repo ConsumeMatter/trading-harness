@@ -488,6 +488,14 @@ def main():
     best_mom_sharpe = sorted(best_mom.values(), key=lambda x: x["sharpe"], reverse=True)[:5]
     best_mr_sharpe  = sorted(best_mr.values(), key=lambda x: x["sharpe"], reverse=True)[:5]
 
+    # Best configs constrained to the 2–3% target threshold band
+    TARGET_BAND = (2.0, 3.0)
+    best_mom_targeted = sorted(
+        [r for r in best_mom.values() if TARGET_BAND[0] <= r["threshold"] <= TARGET_BAND[1]],
+        key=lambda x: x["sharpe"], reverse=True
+    )[:3]
+    recommended_threshold = best_mom_targeted[0]["threshold"] / 100 if best_mom_targeted else 0.02
+
     output = {
         "meta": {
             "data_type":      "real_market_data",
@@ -514,9 +522,9 @@ def main():
             for r in best_mr_sharpe
         ],
         "recommended_harness_config": {
-            "note": "Top momentum picks by Sharpe, weekly-data backtest 2021-2026",
-            "tickers": [r["ticker"] for r in best_mom_sharpe[:3]],
-            "buy_threshold_pct": best_mom_sharpe[0]["threshold"] / 100 if best_mom_sharpe else 0.02,
+            "note": "Best momentum picks within 2–3% threshold band, weekly-data backtest 2022-2025",
+            "tickers": [r["ticker"] for r in best_mom_targeted],
+            "buy_threshold_pct": recommended_threshold,
         },
     }
 
@@ -526,13 +534,17 @@ def main():
     print("\n=== Summary ===")
     print(f"  Universe: {len(loaded)} tickers, {len(common_idx)} weeks of real data")
     print(f"  Date range: {common_idx[0].date()} – {common_idx[-1].date()}")
-    print(f"\n  Top 5 momentum configs by Sharpe:")
+    print(f"\n  Top 5 momentum configs by Sharpe (all thresholds):")
     for r in best_mom_sharpe:
+        print(f"    {r['ticker']:6s} thr={r['threshold']:.1f}%  Sh={r['sharpe']:.2f}  ret={r['total_ret']:+.1f}%  dd={r['max_dd']:.1f}%")
+    print(f"\n  Best momentum configs in 2–3% target band:")
+    for r in best_mom_targeted:
         print(f"    {r['ticker']:6s} thr={r['threshold']:.1f}%  Sh={r['sharpe']:.2f}  ret={r['total_ret']:+.1f}%  dd={r['max_dd']:.1f}%")
     print(f"\n  Top 5 MR configs by Sharpe:")
     for r in best_mr_sharpe:
         print(f"    {r['ticker']:6s} MA-{r['ma_window']:2d} thr={r['threshold']:.1f}%  Sh={r['sharpe']:.2f}  ret={r['total_ret']:+.1f}%  dd={r['max_dd']:.1f}%")
-    print(f"\n  Recommended harness config: {output['recommended_harness_config']}")
+    cfg = output['recommended_harness_config']
+    print(f"\n  Recommended harness config: tickers={cfg['tickers']}  buy_threshold_pct={cfg['buy_threshold_pct']}")
     print(f"\nOutputs in: {OUT.resolve()}")
 
 
