@@ -50,7 +50,7 @@ from typing import Optional
 
 @dataclass
 class Config:
-    tickers: list[str] = field(default_factory=lambda: ["CEG", "TSM", "VGT"])
+    tickers: list[str] = field(default_factory=lambda: ["TSM", "XLK", "CAT"])
     starting_cash: float = 1000.00
     max_position_pct: float = 0.25       # no single position > 25% of account
     daily_loss_limit_pct: float = 0.05   # halt trading for the day at -5%
@@ -65,8 +65,8 @@ class StrategyParams:
     """Tunables for decide(). Kept separate from Config: these are
     strategy knobs (what counts as a signal), not harness/broker plumbing
     (how much cash, what account, what safety limits)."""
-    buy_threshold_pct: float = 0.02          # propose a buy on a move up this big
-    sell_threshold_pct: float = 0.02         # propose trimming on a move down this big
+    buy_threshold_pct: float = 0.025         # propose a buy on a move up this big
+    sell_threshold_pct: float = 0.025        # propose trimming on a move down this big
     buy_fraction_of_cash: float = 0.10       # size a buy as this fraction of cash
     sell_fraction_of_position: float = 0.50  # trim this fraction of the held position
 
