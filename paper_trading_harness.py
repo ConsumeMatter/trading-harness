@@ -50,14 +50,14 @@ from typing import Optional
 
 @dataclass
 class Config:
-    tickers: list[str] = field(default_factory=lambda: ["TSM", "XLK", "CAT"])
+    tickers: list[str] = field(default_factory=lambda: ["TSM", "XLK", "CAT", "XLE"])
     starting_cash: float = 1000.00
     max_position_pct: float = 0.25       # no single position > 25% of account
     daily_loss_limit_pct: float = 0.05   # halt trading for the day at -5%
     require_human_approval: bool = True  # mirrors Robinhood's approval-required mode
     log_path: Path = Path("harness_log.jsonl")
     state_path: Path = Path("portfolio_state.json")
-    price_history_len: int = 10          # ticks of history kept per ticker
+    price_history_len: int = 55          # must cover mr_ma_window (50) + a few extra ticks
 
 
 @dataclass
@@ -65,10 +65,17 @@ class StrategyParams:
     """Tunables for decide(). Kept separate from Config: these are
     strategy knobs (what counts as a signal), not harness/broker plumbing
     (how much cash, what account, what safety limits)."""
+    # Momentum path (applied to non-MR tickers)
     buy_threshold_pct: float = 0.025         # propose a buy on a move up this big
     sell_threshold_pct: float = 0.025        # propose trimming on a move down this big
     buy_fraction_of_cash: float = 0.10       # size a buy as this fraction of cash
     sell_fraction_of_position: float = 0.50  # trim this fraction of the held position
+    # Mean-reversion path
+    mr_tickers: list[str] = field(default_factory=lambda: ["XLE"])
+    mr_ma_window: int = 50                   # MA period for mean-reversion signal
+    mr_entry_threshold_pct: float = 0.01     # enter when price is this far below MA
+    mr_exit_threshold_pct: float = 0.0       # exit when price recovers to MA (0 = at MA)
+    mr_buy_fraction_of_cash: float = 0.10    # size MR buy as this fraction of cash
 
 
 # ---------------------------------------------------------------------------
@@ -243,6 +250,61 @@ def log_event(config: Config, event: dict) -> None:
 # the approval gate has one single choke point to sit in front of.
 # ---------------------------------------------------------------------------
 
+def _mr_signal(
+    ticker: str,
+    current_price: float,
+    history: list[float],
+    positions: dict[str, float],
+    cash: float,
+    params: StrategyParams,
+) -> Optional[dict]:
+    """Mean-reversion signal for a single ticker.
+
+    Entry: price is more than mr_entry_threshold_pct below its MA → buy.
+    Exit: price has recovered to within mr_exit_threshold_pct of MA and
+    we hold a position → sell everything.
+
+    Returns a trade proposal dict or None. Called only for tickers in
+    params.mr_tickers.
+    """
+    if len(history) < params.mr_ma_window:
+        return None  # not enough history yet to compute MA
+
+    ma = sum(history[-params.mr_ma_window:]) / params.mr_ma_window
+    if ma <= 0:
+        return None
+
+    deviation = (ma - current_price) / ma  # positive when price < MA
+
+    held_shares = positions.get(ticker, 0.0)
+
+    # Exit: price back at or above MA while we hold a position
+    if held_shares > 0 and deviation <= params.mr_exit_threshold_pct:
+        position_value = held_shares * current_price
+        return {
+            "ticker": ticker,
+            "side": "sell",
+            "dollar_amount": round(position_value, 2),
+            "reason": (f"{ticker} MR exit: price {current_price:.2f} recovered "
+                       f"to MA {ma:.2f} ({deviation:.2%} deviation)"),
+        }
+
+    # Entry: price sufficiently below MA and no position open
+    if held_shares <= 0 and deviation >= params.mr_entry_threshold_pct:
+        dollar_amount = round(cash * params.mr_buy_fraction_of_cash, 2)
+        if dollar_amount <= 0:
+            return None
+        return {
+            "ticker": ticker,
+            "side": "buy",
+            "dollar_amount": dollar_amount,
+            "reason": (f"{ticker} MR entry: price {current_price:.2f} is "
+                       f"{deviation:.2%} below MA-{params.mr_ma_window} {ma:.2f}"),
+        }
+
+    return None
+
+
 def decide(
     prices: dict[str, float],
     positions: dict[str, float],
@@ -250,28 +312,51 @@ def decide(
     price_history: dict[str, list[float]],
     params: StrategyParams,
 ) -> Optional[dict]:
-    """v1 strategy: threshold-on-momentum, one trade per call.
+    """Two-path strategy: mean-reversion for MR tickers, momentum for the rest.
 
-    For each ticker, compares the current price to the previous tick's
-    price (the last entry already in price_history — this tick's own
-    price is appended by tick() AFTER decide() runs, so it's never
-    compared against itself). Proposes at most one trade per call: the
-    ticker with the single largest absolute move that crosses a
-    threshold, buy on a big enough move up, trim on a big enough move
-    down.
+    Mean-reversion path (params.mr_tickers, e.g. XLE):
+      Enter when price falls mr_entry_threshold_pct below its MA-{mr_ma_window}.
+      Exit when price recovers to MA. Requires mr_ma_window ticks of history.
 
-    Must return either None (no action) or a dict shaped like:
+    Momentum path (all other tickers):
+      Compares current price to the previous tick's price. Buy on an up-move
+      >= buy_threshold_pct; trim on a down-move <= -sell_threshold_pct.
+
+    At most one trade per call. MR exit signals take priority (they are risk
+    management as much as alpha); then MR entries; then the largest-move
+    momentum candidate. Returns None when no signal fires.
+
+    Must return either None or a dict shaped like:
       {"ticker": str, "side": "buy" | "sell", "dollar_amount": float, "reason": str}
-
-    This is deliberately simple and fully deterministic — no ML, no
-    multi-factor scoring. The point of v1 is to prove signal -> sizing ->
-    risk-gate -> logging works end-to-end, not to be a good trader.
-    MockBroker's prices are synthetic random walk, so there is no real
-    edge to capture yet regardless of how clever the logic is — that's
-    expected, and stays true until real market data replaces MockBroker.
     """
+    mr_set = set(params.mr_tickers)
+
+    # --- Mean-reversion path ---
+    mr_exits = []
+    mr_entries = []
+    for ticker in params.mr_tickers:
+        if ticker not in prices:
+            continue
+        current_price = prices[ticker]
+        history = price_history.get(ticker, [])
+        signal = _mr_signal(ticker, current_price, history, positions, cash, params)
+        if signal is None:
+            continue
+        if signal["side"] == "sell":
+            mr_exits.append(signal)
+        else:
+            mr_entries.append(signal)
+
+    if mr_exits:
+        return mr_exits[0]  # first exit trumps everything else
+    if mr_entries:
+        return mr_entries[0]
+
+    # --- Momentum path (non-MR tickers) ---
     candidates = []
     for ticker, current_price in prices.items():
+        if ticker in mr_set:
+            continue
         history = price_history.get(ticker, [])
         if not history:
             continue  # no prior tick recorded yet for this ticker
