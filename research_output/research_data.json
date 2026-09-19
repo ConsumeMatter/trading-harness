@@ -1,0 +1,2039 @@
+{
+  "meta": {
+    "data_type": "real_market_data",
+    "source": "dotchev/top-stox (weekly) + whchien/ai-trader (TSM daily)",
+    "date_range": "2022-01-17 \u2013 2025-12-15",
+    "n_weeks": 205,
+    "generated": "2026-09-19 19:52:17.715804",
+    "tickers_loaded": [
+      "NVDA",
+      "CEG",
+      "TSM",
+      "META",
+      "AMZN",
+      "XLE",
+      "BAC",
+      "DE",
+      "CVX",
+      "AAPL",
+      "XOM",
+      "XLY",
+      "XLK",
+      "IWM",
+      "QQQ",
+      "MSFT",
+      "CAT",
+      "JPM",
+      "XLB",
+      "XLRE",
+      "NEE",
+      "XLF",
+      "UNH",
+      "XLI",
+      "LMT",
+      "VTI",
+      "XLU",
+      "SPY",
+      "XLV",
+      "XLP"
+    ]
+  },
+  "screening": [
+    {
+      "avg_weekly_range_pct": 11.463,
+      "rv52_ann_pct": 54.1,
+      "return_1y_pct": 57.4,
+      "ticker": "CEG"
+    },
+    {
+      "avg_weekly_range_pct": 9.09,
+      "rv52_ann_pct": 46.6,
+      "return_1y_pct": 34.4,
+      "ticker": "NVDA"
+    },
+    {
+      "avg_weekly_range_pct": 8.531,
+      "rv52_ann_pct": 52.9,
+      "return_1y_pct": -32.9,
+      "ticker": "UNH"
+    },
+    {
+      "avg_weekly_range_pct": 8.174,
+      "rv52_ann_pct": 37.9,
+      "return_1y_pct": 46.4,
+      "ticker": "TSM"
+    },
+    {
+      "avg_weekly_range_pct": 7.181,
+      "rv52_ann_pct": 36.3,
+      "return_1y_pct": 12.9,
+      "ticker": "META"
+    },
+    {
+      "avg_weekly_range_pct": 6.241,
+      "rv52_ann_pct": 30.0,
+      "return_1y_pct": 1.1,
+      "ticker": "AMZN"
+    },
+    {
+      "avg_weekly_range_pct": 6.074,
+      "rv52_ann_pct": 32.5,
+      "return_1y_pct": 59.8,
+      "ticker": "CAT"
+    },
+    {
+      "avg_weekly_range_pct": 5.723,
+      "rv52_ann_pct": 26.5,
+      "return_1y_pct": 14.4,
+      "ticker": "NEE"
+    },
+    {
+      "avg_weekly_range_pct": 5.587,
+      "rv52_ann_pct": 25.2,
+      "return_1y_pct": 10.3,
+      "ticker": "DE"
+    },
+    {
+      "avg_weekly_range_pct": 5.576,
+      "rv52_ann_pct": 32.7,
+      "return_1y_pct": 8.0,
+      "ticker": "AAPL"
+    },
+    {
+      "avg_weekly_range_pct": 5.444,
+      "rv52_ann_pct": 29.3,
+      "return_1y_pct": 28.0,
+      "ticker": "BAC"
+    },
+    {
+      "avg_weekly_range_pct": 5.154,
+      "rv52_ann_pct": 24.7,
+      "return_1y_pct": -0.2,
+      "ticker": "LMT"
+    },
+    {
+      "avg_weekly_range_pct": 5.017,
+      "rv52_ann_pct": 28.6,
+      "return_1y_pct": 36.3,
+      "ticker": "JPM"
+    },
+    {
+      "avg_weekly_range_pct": 4.758,
+      "rv52_ann_pct": 25.5,
+      "return_1y_pct": 23.3,
+      "ticker": "XLK"
+    },
+    {
+      "avg_weekly_range_pct": 4.72,
+      "rv52_ann_pct": 23.3,
+      "return_1y_pct": 14.3,
+      "ticker": "XOM"
+    },
+    {
+      "avg_weekly_range_pct": 4.631,
+      "rv52_ann_pct": 24.4,
+      "return_1y_pct": 8.2,
+      "ticker": "CVX"
+    },
+    {
+      "avg_weekly_range_pct": 4.5,
+      "rv52_ann_pct": 23.7,
+      "return_1y_pct": 12.1,
+      "ticker": "MSFT"
+    },
+    {
+      "avg_weekly_range_pct": 4.456,
+      "rv52_ann_pct": 23.8,
+      "return_1y_pct": 8.4,
+      "ticker": "XLE"
+    },
+    {
+      "avg_weekly_range_pct": 4.317,
+      "rv52_ann_pct": 19.6,
+      "return_1y_pct": 14.2,
+      "ticker": "IWM"
+    },
+    {
+      "avg_weekly_range_pct": 4.164,
+      "rv52_ann_pct": 20.1,
+      "return_1y_pct": 7.4,
+      "ticker": "XLY"
+    },
+    {
+      "avg_weekly_range_pct": 3.968,
+      "rv52_ann_pct": 21.4,
+      "return_1y_pct": 19.6,
+      "ticker": "QQQ"
+    },
+    {
+      "avg_weekly_range_pct": 3.51,
+      "rv52_ann_pct": 19.2,
+      "return_1y_pct": 14.7,
+      "ticker": "XLF"
+    },
+    {
+      "avg_weekly_range_pct": 3.442,
+      "rv52_ann_pct": 17.4,
+      "return_1y_pct": 8.1,
+      "ticker": "XLB"
+    },
+    {
+      "avg_weekly_range_pct": 3.28,
+      "rv52_ann_pct": 17.8,
+      "return_1y_pct": 18.3,
+      "ticker": "XLI"
+    },
+    {
+      "avg_weekly_range_pct": 3.239,
+      "rv52_ann_pct": 12.8,
+      "return_1y_pct": 14.8,
+      "ticker": "XLU"
+    },
+    {
+      "avg_weekly_range_pct": 3.184,
+      "rv52_ann_pct": 16.4,
+      "return_1y_pct": 14.3,
+      "ticker": "XLV"
+    },
+    {
+      "avg_weekly_range_pct": 3.169,
+      "rv52_ann_pct": 17.1,
+      "return_1y_pct": 16.1,
+      "ticker": "VTI"
+    },
+    {
+      "avg_weekly_range_pct": 3.14,
+      "rv52_ann_pct": 15.1,
+      "return_1y_pct": 2.3,
+      "ticker": "XLRE"
+    },
+    {
+      "avg_weekly_range_pct": 3.105,
+      "rv52_ann_pct": 17.3,
+      "return_1y_pct": 16.5,
+      "ticker": "SPY"
+    },
+    {
+      "avg_weekly_range_pct": 2.565,
+      "rv52_ann_pct": 11.0,
+      "return_1y_pct": 1.2,
+      "ticker": "XLP"
+    }
+  ],
+  "momentum_candidates": [
+    "CEG",
+    "NVDA",
+    "UNH",
+    "TSM",
+    "META",
+    "AMZN",
+    "CAT",
+    "NEE",
+    "DE",
+    "AAPL",
+    "BAC",
+    "LMT",
+    "JPM",
+    "XLK",
+    "XOM"
+  ],
+  "mr_candidates": [
+    "CVX",
+    "MSFT",
+    "XLE",
+    "IWM",
+    "XLY",
+    "QQQ",
+    "XLF",
+    "XLB",
+    "XLI",
+    "XLU",
+    "XLV",
+    "VTI",
+    "XLRE",
+    "SPY",
+    "XLP"
+  ],
+  "momentum_results": [
+    {
+      "ticker": "CEG",
+      "threshold": 1.0,
+      "total_ret": 99.7,
+      "max_dd": 37.9,
+      "sharpe": 0.47,
+      "trades_pw": 0.302
+    },
+    {
+      "ticker": "CEG",
+      "threshold": 1.5,
+      "total_ret": 72.0,
+      "max_dd": 37.9,
+      "sharpe": 0.39,
+      "trades_pw": 0.273
+    },
+    {
+      "ticker": "CEG",
+      "threshold": 2.0,
+      "total_ret": 63.8,
+      "max_dd": 37.9,
+      "sharpe": 0.36,
+      "trades_pw": 0.259
+    },
+    {
+      "ticker": "CEG",
+      "threshold": 2.5,
+      "total_ret": 111.9,
+      "max_dd": 27.4,
+      "sharpe": 0.58,
+      "trades_pw": 0.249
+    },
+    {
+      "ticker": "CEG",
+      "threshold": 3.0,
+      "total_ret": 132.3,
+      "max_dd": 24.9,
+      "sharpe": 0.65,
+      "trades_pw": 0.229
+    },
+    {
+      "ticker": "NVDA",
+      "threshold": 1.0,
+      "total_ret": 181.4,
+      "max_dd": 46.6,
+      "sharpe": 0.7,
+      "trades_pw": 0.327
+    },
+    {
+      "ticker": "NVDA",
+      "threshold": 1.5,
+      "total_ret": 202.0,
+      "max_dd": 48.4,
+      "sharpe": 0.75,
+      "trades_pw": 0.307
+    },
+    {
+      "ticker": "NVDA",
+      "threshold": 2.0,
+      "total_ret": 152.7,
+      "max_dd": 49.8,
+      "sharpe": 0.64,
+      "trades_pw": 0.298
+    },
+    {
+      "ticker": "NVDA",
+      "threshold": 2.5,
+      "total_ret": 146.3,
+      "max_dd": 51.0,
+      "sharpe": 0.63,
+      "trades_pw": 0.293
+    },
+    {
+      "ticker": "NVDA",
+      "threshold": 3.0,
+      "total_ret": 116.4,
+      "max_dd": 49.0,
+      "sharpe": 0.55,
+      "trades_pw": 0.268
+    },
+    {
+      "ticker": "UNH",
+      "threshold": 1.0,
+      "total_ret": -39.7,
+      "max_dd": 49.7,
+      "sharpe": -0.48,
+      "trades_pw": 0.283
+    },
+    {
+      "ticker": "UNH",
+      "threshold": 1.5,
+      "total_ret": -14.2,
+      "max_dd": 34.3,
+      "sharpe": -0.15,
+      "trades_pw": 0.244
+    },
+    {
+      "ticker": "UNH",
+      "threshold": 2.0,
+      "total_ret": -17.6,
+      "max_dd": 43.5,
+      "sharpe": -0.2,
+      "trades_pw": 0.195
+    },
+    {
+      "ticker": "UNH",
+      "threshold": 2.5,
+      "total_ret": -22.8,
+      "max_dd": 46.2,
+      "sharpe": -0.27,
+      "trades_pw": 0.171
+    },
+    {
+      "ticker": "UNH",
+      "threshold": 3.0,
+      "total_ret": -22.8,
+      "max_dd": 46.2,
+      "sharpe": -0.27,
+      "trades_pw": 0.171
+    },
+    {
+      "ticker": "TSM",
+      "threshold": 1.0,
+      "total_ret": 45.8,
+      "max_dd": 45.4,
+      "sharpe": 0.34,
+      "trades_pw": 0.307
+    },
+    {
+      "ticker": "TSM",
+      "threshold": 1.5,
+      "total_ret": 81.2,
+      "max_dd": 45.4,
+      "sharpe": 0.56,
+      "trades_pw": 0.283
+    },
+    {
+      "ticker": "TSM",
+      "threshold": 2.0,
+      "total_ret": 107.6,
+      "max_dd": 45.4,
+      "sharpe": 0.73,
+      "trades_pw": 0.254
+    },
+    {
+      "ticker": "TSM",
+      "threshold": 2.5,
+      "total_ret": 124.4,
+      "max_dd": 45.4,
+      "sharpe": 0.81,
+      "trades_pw": 0.239
+    },
+    {
+      "ticker": "TSM",
+      "threshold": 3.0,
+      "total_ret": 117.3,
+      "max_dd": 45.4,
+      "sharpe": 0.8,
+      "trades_pw": 0.21
+    },
+    {
+      "ticker": "META",
+      "threshold": 1.0,
+      "total_ret": 105.9,
+      "max_dd": 47.7,
+      "sharpe": 0.56,
+      "trades_pw": 0.312
+    },
+    {
+      "ticker": "META",
+      "threshold": 1.5,
+      "total_ret": 91.5,
+      "max_dd": 47.7,
+      "sharpe": 0.51,
+      "trades_pw": 0.298
+    },
+    {
+      "ticker": "META",
+      "threshold": 2.0,
+      "total_ret": 44.4,
+      "max_dd": 47.7,
+      "sharpe": 0.29,
+      "trades_pw": 0.273
+    },
+    {
+      "ticker": "META",
+      "threshold": 2.5,
+      "total_ret": 48.5,
+      "max_dd": 43.5,
+      "sharpe": 0.32,
+      "trades_pw": 0.249
+    },
+    {
+      "ticker": "META",
+      "threshold": 3.0,
+      "total_ret": 106.3,
+      "max_dd": 26.0,
+      "sharpe": 0.7,
+      "trades_pw": 0.224
+    },
+    {
+      "ticker": "AMZN",
+      "threshold": 1.0,
+      "total_ret": 21.0,
+      "max_dd": 42.8,
+      "sharpe": 0.2,
+      "trades_pw": 0.278
+    },
+    {
+      "ticker": "AMZN",
+      "threshold": 1.5,
+      "total_ret": 35.2,
+      "max_dd": 38.7,
+      "sharpe": 0.34,
+      "trades_pw": 0.239
+    },
+    {
+      "ticker": "AMZN",
+      "threshold": 2.0,
+      "total_ret": 28.1,
+      "max_dd": 38.7,
+      "sharpe": 0.28,
+      "trades_pw": 0.229
+    },
+    {
+      "ticker": "AMZN",
+      "threshold": 2.5,
+      "total_ret": 7.6,
+      "max_dd": 39.6,
+      "sharpe": 0.09,
+      "trades_pw": 0.215
+    },
+    {
+      "ticker": "AMZN",
+      "threshold": 3.0,
+      "total_ret": 2.7,
+      "max_dd": 39.6,
+      "sharpe": 0.03,
+      "trades_pw": 0.2
+    },
+    {
+      "ticker": "CAT",
+      "threshold": 1.0,
+      "total_ret": 79.3,
+      "max_dd": 30.4,
+      "sharpe": 0.61,
+      "trades_pw": 0.302
+    },
+    {
+      "ticker": "CAT",
+      "threshold": 1.5,
+      "total_ret": 65.5,
+      "max_dd": 30.4,
+      "sharpe": 0.51,
+      "trades_pw": 0.283
+    },
+    {
+      "ticker": "CAT",
+      "threshold": 2.0,
+      "total_ret": 101.5,
+      "max_dd": 29.3,
+      "sharpe": 0.73,
+      "trades_pw": 0.244
+    },
+    {
+      "ticker": "CAT",
+      "threshold": 2.5,
+      "total_ret": 82.1,
+      "max_dd": 31.7,
+      "sharpe": 0.63,
+      "trades_pw": 0.234
+    },
+    {
+      "ticker": "CAT",
+      "threshold": 3.0,
+      "total_ret": 68.1,
+      "max_dd": 30.7,
+      "sharpe": 0.54,
+      "trades_pw": 0.224
+    },
+    {
+      "ticker": "NEE",
+      "threshold": 1.0,
+      "total_ret": 6.8,
+      "max_dd": 42.4,
+      "sharpe": 0.08,
+      "trades_pw": 0.298
+    },
+    {
+      "ticker": "NEE",
+      "threshold": 1.5,
+      "total_ret": 5.9,
+      "max_dd": 35.5,
+      "sharpe": 0.07,
+      "trades_pw": 0.263
+    },
+    {
+      "ticker": "NEE",
+      "threshold": 2.0,
+      "total_ret": -12.7,
+      "max_dd": 38.8,
+      "sharpe": -0.17,
+      "trades_pw": 0.249
+    },
+    {
+      "ticker": "NEE",
+      "threshold": 2.5,
+      "total_ret": -8.6,
+      "max_dd": 32.8,
+      "sharpe": -0.12,
+      "trades_pw": 0.205
+    },
+    {
+      "ticker": "NEE",
+      "threshold": 3.0,
+      "total_ret": 13.6,
+      "max_dd": 24.9,
+      "sharpe": 0.19,
+      "trades_pw": 0.19
+    },
+    {
+      "ticker": "DE",
+      "threshold": 1.0,
+      "total_ret": -19.5,
+      "max_dd": 39.6,
+      "sharpe": -0.26,
+      "trades_pw": 0.302
+    },
+    {
+      "ticker": "DE",
+      "threshold": 1.5,
+      "total_ret": -28.5,
+      "max_dd": 38.8,
+      "sharpe": -0.41,
+      "trades_pw": 0.254
+    },
+    {
+      "ticker": "DE",
+      "threshold": 2.0,
+      "total_ret": -25.9,
+      "max_dd": 36.5,
+      "sharpe": -0.37,
+      "trades_pw": 0.239
+    },
+    {
+      "ticker": "DE",
+      "threshold": 2.5,
+      "total_ret": -35.3,
+      "max_dd": 46.5,
+      "sharpe": -0.55,
+      "trades_pw": 0.22
+    },
+    {
+      "ticker": "DE",
+      "threshold": 3.0,
+      "total_ret": -31.0,
+      "max_dd": 42.9,
+      "sharpe": -0.51,
+      "trades_pw": 0.171
+    },
+    {
+      "ticker": "AAPL",
+      "threshold": 1.0,
+      "total_ret": 9.7,
+      "max_dd": 28.2,
+      "sharpe": 0.11,
+      "trades_pw": 0.307
+    },
+    {
+      "ticker": "AAPL",
+      "threshold": 1.5,
+      "total_ret": 14.8,
+      "max_dd": 28.2,
+      "sharpe": 0.17,
+      "trades_pw": 0.268
+    },
+    {
+      "ticker": "AAPL",
+      "threshold": 2.0,
+      "total_ret": 32.5,
+      "max_dd": 25.6,
+      "sharpe": 0.36,
+      "trades_pw": 0.244
+    },
+    {
+      "ticker": "AAPL",
+      "threshold": 2.5,
+      "total_ret": 43.2,
+      "max_dd": 17.2,
+      "sharpe": 0.53,
+      "trades_pw": 0.215
+    },
+    {
+      "ticker": "AAPL",
+      "threshold": 3.0,
+      "total_ret": 12.1,
+      "max_dd": 17.3,
+      "sharpe": 0.17,
+      "trades_pw": 0.176
+    },
+    {
+      "ticker": "BAC",
+      "threshold": 1.0,
+      "total_ret": 23.4,
+      "max_dd": 31.0,
+      "sharpe": 0.23,
+      "trades_pw": 0.312
+    },
+    {
+      "ticker": "BAC",
+      "threshold": 1.5,
+      "total_ret": 18.3,
+      "max_dd": 29.7,
+      "sharpe": 0.19,
+      "trades_pw": 0.283
+    },
+    {
+      "ticker": "BAC",
+      "threshold": 2.0,
+      "total_ret": 27.1,
+      "max_dd": 30.8,
+      "sharpe": 0.28,
+      "trades_pw": 0.263
+    },
+    {
+      "ticker": "BAC",
+      "threshold": 2.5,
+      "total_ret": 36.4,
+      "max_dd": 30.8,
+      "sharpe": 0.37,
+      "trades_pw": 0.229
+    },
+    {
+      "ticker": "BAC",
+      "threshold": 3.0,
+      "total_ret": 35.5,
+      "max_dd": 29.7,
+      "sharpe": 0.4,
+      "trades_pw": 0.205
+    },
+    {
+      "ticker": "LMT",
+      "threshold": 1.0,
+      "total_ret": -5.6,
+      "max_dd": 32.5,
+      "sharpe": -0.08,
+      "trades_pw": 0.283
+    },
+    {
+      "ticker": "LMT",
+      "threshold": 1.5,
+      "total_ret": 11.6,
+      "max_dd": 25.1,
+      "sharpe": 0.17,
+      "trades_pw": 0.234
+    },
+    {
+      "ticker": "LMT",
+      "threshold": 2.0,
+      "total_ret": 3.2,
+      "max_dd": 25.1,
+      "sharpe": 0.05,
+      "trades_pw": 0.185
+    },
+    {
+      "ticker": "LMT",
+      "threshold": 2.5,
+      "total_ret": -5.5,
+      "max_dd": 25.1,
+      "sharpe": -0.09,
+      "trades_pw": 0.141
+    },
+    {
+      "ticker": "LMT",
+      "threshold": 3.0,
+      "total_ret": -10.9,
+      "max_dd": 23.3,
+      "sharpe": -0.2,
+      "trades_pw": 0.112
+    },
+    {
+      "ticker": "JPM",
+      "threshold": 1.0,
+      "total_ret": 96.6,
+      "max_dd": 25.1,
+      "sharpe": 0.87,
+      "trades_pw": 0.302
+    },
+    {
+      "ticker": "JPM",
+      "threshold": 1.5,
+      "total_ret": 47.5,
+      "max_dd": 29.3,
+      "sharpe": 0.49,
+      "trades_pw": 0.273
+    },
+    {
+      "ticker": "JPM",
+      "threshold": 2.0,
+      "total_ret": 53.5,
+      "max_dd": 29.3,
+      "sharpe": 0.58,
+      "trades_pw": 0.239
+    },
+    {
+      "ticker": "JPM",
+      "threshold": 2.5,
+      "total_ret": 68.1,
+      "max_dd": 29.3,
+      "sharpe": 0.73,
+      "trades_pw": 0.22
+    },
+    {
+      "ticker": "JPM",
+      "threshold": 3.0,
+      "total_ret": 41.9,
+      "max_dd": 29.3,
+      "sharpe": 0.49,
+      "trades_pw": 0.195
+    },
+    {
+      "ticker": "XLK",
+      "threshold": 1.0,
+      "total_ret": 52.5,
+      "max_dd": 23.0,
+      "sharpe": 0.66,
+      "trades_pw": 0.293
+    },
+    {
+      "ticker": "XLK",
+      "threshold": 1.5,
+      "total_ret": 51.8,
+      "max_dd": 23.0,
+      "sharpe": 0.66,
+      "trades_pw": 0.263
+    },
+    {
+      "ticker": "XLK",
+      "threshold": 2.0,
+      "total_ret": 63.8,
+      "max_dd": 22.5,
+      "sharpe": 0.77,
+      "trades_pw": 0.249
+    },
+    {
+      "ticker": "XLK",
+      "threshold": 2.5,
+      "total_ret": 37.0,
+      "max_dd": 21.7,
+      "sharpe": 0.5,
+      "trades_pw": 0.205
+    },
+    {
+      "ticker": "XLK",
+      "threshold": 3.0,
+      "total_ret": 36.9,
+      "max_dd": 21.7,
+      "sharpe": 0.54,
+      "trades_pw": 0.176
+    },
+    {
+      "ticker": "XOM",
+      "threshold": 1.0,
+      "total_ret": -9.2,
+      "max_dd": 34.0,
+      "sharpe": -0.1,
+      "trades_pw": 0.327
+    },
+    {
+      "ticker": "XOM",
+      "threshold": 1.5,
+      "total_ret": 10.6,
+      "max_dd": 21.3,
+      "sharpe": 0.11,
+      "trades_pw": 0.293
+    },
+    {
+      "ticker": "XOM",
+      "threshold": 2.0,
+      "total_ret": 17.6,
+      "max_dd": 22.8,
+      "sharpe": 0.22,
+      "trades_pw": 0.229
+    },
+    {
+      "ticker": "XOM",
+      "threshold": 2.5,
+      "total_ret": 27.2,
+      "max_dd": 15.7,
+      "sharpe": 0.35,
+      "trades_pw": 0.2
+    },
+    {
+      "ticker": "XOM",
+      "threshold": 3.0,
+      "total_ret": 21.5,
+      "max_dd": 15.7,
+      "sharpe": 0.3,
+      "trades_pw": 0.156
+    }
+  ],
+  "mr_results": [
+    {
+      "ticker": "CVX",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 85.2,
+      "max_dd": 10.6,
+      "sharpe": 1.1,
+      "trades_pw": 0.068
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 72.6,
+      "max_dd": 7.7,
+      "sharpe": 1.0,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 73.3,
+      "max_dd": 7.7,
+      "sharpe": 1.02,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 54.1,
+      "max_dd": 7.7,
+      "sharpe": 0.83,
+      "trades_pw": 0.034
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 50.2,
+      "max_dd": 6.3,
+      "sharpe": 1.01,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 42.6,
+      "max_dd": 6.3,
+      "sharpe": 0.96,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 46.1,
+      "max_dd": 6.3,
+      "sharpe": 1.03,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "CVX",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 39.7,
+      "max_dd": 6.3,
+      "sharpe": 0.97,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 51.1,
+      "max_dd": 16.3,
+      "sharpe": 0.63,
+      "trades_pw": 0.054
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 44.3,
+      "max_dd": 16.3,
+      "sharpe": 0.56,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 53.7,
+      "max_dd": 16.3,
+      "sharpe": 0.68,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 55.0,
+      "max_dd": 9.5,
+      "sharpe": 0.79,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 37.8,
+      "max_dd": 13.1,
+      "sharpe": 0.72,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 39.6,
+      "max_dd": 12.0,
+      "sharpe": 0.75,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 39.6,
+      "max_dd": 12.0,
+      "sharpe": 0.75,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "MSFT",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 28.3,
+      "max_dd": 9.4,
+      "sharpe": 0.68,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 133.2,
+      "max_dd": 11.8,
+      "sharpe": 1.37,
+      "trades_pw": 0.068
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 126.7,
+      "max_dd": 11.8,
+      "sharpe": 1.38,
+      "trades_pw": 0.059
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 101.0,
+      "max_dd": 11.8,
+      "sharpe": 1.19,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 120.4,
+      "max_dd": 6.8,
+      "sharpe": 1.44,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 88.7,
+      "max_dd": 4.6,
+      "sharpe": 1.87,
+      "trades_pw": 0.063
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 77.2,
+      "max_dd": 4.6,
+      "sharpe": 1.75,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 57.8,
+      "max_dd": 4.6,
+      "sharpe": 1.48,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 33.3,
+      "max_dd": 4.6,
+      "sharpe": 1.14,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 45.1,
+      "max_dd": 16.6,
+      "sharpe": 0.73,
+      "trades_pw": 0.054
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 49.3,
+      "max_dd": 16.6,
+      "sharpe": 0.83,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 36.5,
+      "max_dd": 16.6,
+      "sharpe": 0.65,
+      "trades_pw": 0.034
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 29.3,
+      "max_dd": 15.4,
+      "sharpe": 0.57,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 20.8,
+      "max_dd": 11.8,
+      "sharpe": 0.48,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 20.8,
+      "max_dd": 11.8,
+      "sharpe": 0.48,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 22.8,
+      "max_dd": 11.8,
+      "sharpe": 0.53,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "IWM",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 23.7,
+      "max_dd": 10.9,
+      "sharpe": 0.58,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 43.1,
+      "max_dd": 15.1,
+      "sharpe": 0.63,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 47.6,
+      "max_dd": 11.4,
+      "sharpe": 0.7,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 40.8,
+      "max_dd": 11.4,
+      "sharpe": 0.63,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 37.5,
+      "max_dd": 11.3,
+      "sharpe": 0.61,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 35.9,
+      "max_dd": 8.7,
+      "sharpe": 0.92,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 25.2,
+      "max_dd": 8.7,
+      "sharpe": 0.73,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 25.2,
+      "max_dd": 8.7,
+      "sharpe": 0.73,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLY",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 25.2,
+      "max_dd": 8.7,
+      "sharpe": 0.73,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 45.6,
+      "max_dd": 16.7,
+      "sharpe": 0.68,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 39.7,
+      "max_dd": 13.9,
+      "sharpe": 0.62,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 26.8,
+      "max_dd": 13.9,
+      "sharpe": 0.45,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 38.6,
+      "max_dd": 12.0,
+      "sharpe": 0.65,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 29.2,
+      "max_dd": 9.7,
+      "sharpe": 0.75,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 25.8,
+      "max_dd": 9.7,
+      "sharpe": 0.68,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 18.9,
+      "max_dd": 9.7,
+      "sharpe": 0.54,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "QQQ",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 31.7,
+      "max_dd": 2.3,
+      "sharpe": 1.11,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 45.7,
+      "max_dd": 10.3,
+      "sharpe": 0.85,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 45.1,
+      "max_dd": 10.3,
+      "sharpe": 0.86,
+      "trades_pw": 0.034
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 47.2,
+      "max_dd": 5.9,
+      "sharpe": 1.06,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 50.7,
+      "max_dd": 5.9,
+      "sharpe": 1.14,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 14.0,
+      "max_dd": 5.9,
+      "sharpe": 0.48,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 13.5,
+      "max_dd": 5.9,
+      "sharpe": 0.49,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 13.5,
+      "max_dd": 5.9,
+      "sharpe": 0.49,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 17.0,
+      "max_dd": 4.0,
+      "sharpe": 0.8,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 8.4,
+      "max_dd": 15.7,
+      "sharpe": 0.15,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 6.0,
+      "max_dd": 15.7,
+      "sharpe": 0.11,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 14.0,
+      "max_dd": 15.7,
+      "sharpe": 0.26,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 28.6,
+      "max_dd": 15.7,
+      "sharpe": 0.56,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 31.1,
+      "max_dd": 12.9,
+      "sharpe": 0.8,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 20.2,
+      "max_dd": 12.9,
+      "sharpe": 0.57,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 24.0,
+      "max_dd": 12.9,
+      "sharpe": 0.68,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLB",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 16.4,
+      "max_dd": 12.9,
+      "sharpe": 0.51,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 42.6,
+      "max_dd": 13.2,
+      "sharpe": 0.81,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 32.9,
+      "max_dd": 11.9,
+      "sharpe": 0.67,
+      "trades_pw": 0.034
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 27.8,
+      "max_dd": 10.5,
+      "sharpe": 0.6,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 44.8,
+      "max_dd": 5.8,
+      "sharpe": 1.13,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 17.5,
+      "max_dd": 2.3,
+      "sharpe": 0.82,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 17.5,
+      "max_dd": 2.3,
+      "sharpe": 0.82,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 20.2,
+      "max_dd": 0.3,
+      "sharpe": 0.97,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 14.1,
+      "max_dd": 0.3,
+      "sharpe": 0.82,
+      "trades_pw": 0.005
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 45.0,
+      "max_dd": 12.8,
+      "sharpe": 0.86,
+      "trades_pw": 0.059
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 53.0,
+      "max_dd": 11.1,
+      "sharpe": 1.08,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 49.0,
+      "max_dd": 11.1,
+      "sharpe": 1.08,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 33.2,
+      "max_dd": 11.1,
+      "sharpe": 0.84,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 14.3,
+      "max_dd": 11.1,
+      "sharpe": 0.42,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 16.0,
+      "max_dd": 11.1,
+      "sharpe": 0.46,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 16.3,
+      "max_dd": 11.1,
+      "sharpe": 0.47,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLU",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 16.4,
+      "max_dd": 11.1,
+      "sharpe": 0.51,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 34.4,
+      "max_dd": 8.1,
+      "sharpe": 0.76,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 42.4,
+      "max_dd": 6.4,
+      "sharpe": 0.99,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 46.3,
+      "max_dd": 6.4,
+      "sharpe": 1.11,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 40.9,
+      "max_dd": 6.4,
+      "sharpe": 1.11,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 23.7,
+      "max_dd": 5.9,
+      "sharpe": 0.68,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 21.2,
+      "max_dd": 5.9,
+      "sharpe": 0.66,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 26.0,
+      "max_dd": 5.9,
+      "sharpe": 0.83,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLV",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 23.0,
+      "max_dd": 5.9,
+      "sharpe": 0.76,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 33.5,
+      "max_dd": 12.0,
+      "sharpe": 0.67,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 34.7,
+      "max_dd": 12.0,
+      "sharpe": 0.69,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 21.9,
+      "max_dd": 12.0,
+      "sharpe": 0.52,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 28.0,
+      "max_dd": 10.6,
+      "sharpe": 0.66,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 20.9,
+      "max_dd": 8.8,
+      "sharpe": 0.66,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 25.0,
+      "max_dd": 1.1,
+      "sharpe": 1.2,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 17.9,
+      "max_dd": 1.1,
+      "sharpe": 0.98,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 12.2,
+      "max_dd": 1.1,
+      "sharpe": 0.77,
+      "trades_pw": 0.005
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 35.5,
+      "max_dd": 20.8,
+      "sharpe": 0.53,
+      "trades_pw": 0.078
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 53.3,
+      "max_dd": 20.8,
+      "sharpe": 0.82,
+      "trades_pw": 0.059
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 45.4,
+      "max_dd": 20.8,
+      "sharpe": 0.72,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 44.2,
+      "max_dd": 20.8,
+      "sharpe": 0.74,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 43.5,
+      "max_dd": 11.5,
+      "sharpe": 0.87,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 27.6,
+      "max_dd": 10.4,
+      "sharpe": 0.62,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 29.6,
+      "max_dd": 8.4,
+      "sharpe": 0.67,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLRE",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 20.4,
+      "max_dd": 8.4,
+      "sharpe": 0.5,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 30.9,
+      "max_dd": 12.0,
+      "sharpe": 0.63,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 33.8,
+      "max_dd": 12.0,
+      "sharpe": 0.68,
+      "trades_pw": 0.039
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 16.4,
+      "max_dd": 12.0,
+      "sharpe": 0.38,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 27.5,
+      "max_dd": 10.1,
+      "sharpe": 0.63,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 20.7,
+      "max_dd": 1.4,
+      "sharpe": 1.08,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 20.7,
+      "max_dd": 1.4,
+      "sharpe": 1.08,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 17.3,
+      "max_dd": 1.4,
+      "sharpe": 0.94,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "SPY",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 12.2,
+      "max_dd": 1.4,
+      "sharpe": 0.75,
+      "trades_pw": 0.005
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 20,
+      "threshold": 1.0,
+      "total_ret": 19.0,
+      "max_dd": 8.2,
+      "sharpe": 0.59,
+      "trades_pw": 0.049
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 20,
+      "threshold": 2.0,
+      "total_ret": 17.0,
+      "max_dd": 8.2,
+      "sharpe": 0.55,
+      "trades_pw": 0.034
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 20,
+      "threshold": 3.0,
+      "total_ret": 18.8,
+      "max_dd": 7.1,
+      "sharpe": 0.62,
+      "trades_pw": 0.029
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 24.5,
+      "max_dd": 4.4,
+      "sharpe": 1.0,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 14.3,
+      "max_dd": 7.0,
+      "sharpe": 0.91,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 14.5,
+      "max_dd": 4.4,
+      "sharpe": 1.01,
+      "trades_pw": 0.02
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 50,
+      "threshold": 3.0,
+      "total_ret": 8.4,
+      "max_dd": 4.4,
+      "sharpe": 0.65,
+      "trades_pw": 0.01
+    },
+    {
+      "ticker": "XLP",
+      "ma_window": 50,
+      "threshold": 5.0,
+      "total_ret": 5.5,
+      "max_dd": 3.2,
+      "sharpe": 0.47,
+      "trades_pw": 0.005
+    }
+  ],
+  "best_momentum_configs": [
+    {
+      "ticker": "JPM",
+      "threshold": 1.0,
+      "total_ret": 96.6,
+      "max_dd": 25.1,
+      "sharpe": 0.87,
+      "trades_pw": 0.302
+    },
+    {
+      "ticker": "TSM",
+      "threshold": 2.5,
+      "total_ret": 124.4,
+      "max_dd": 45.4,
+      "sharpe": 0.81,
+      "trades_pw": 0.239
+    },
+    {
+      "ticker": "XLK",
+      "threshold": 2.0,
+      "total_ret": 63.8,
+      "max_dd": 22.5,
+      "sharpe": 0.77,
+      "trades_pw": 0.249
+    },
+    {
+      "ticker": "NVDA",
+      "threshold": 1.5,
+      "total_ret": 202.0,
+      "max_dd": 48.4,
+      "sharpe": 0.75,
+      "trades_pw": 0.307
+    },
+    {
+      "ticker": "CAT",
+      "threshold": 2.0,
+      "total_ret": 101.5,
+      "max_dd": 29.3,
+      "sharpe": 0.73,
+      "trades_pw": 0.244
+    }
+  ],
+  "best_mr_configs": [
+    {
+      "ticker": "XLE",
+      "ma_window": 50,
+      "threshold": 1.0,
+      "total_ret": 88.7,
+      "max_dd": 4.6,
+      "sharpe": 1.87,
+      "trades_pw": 0.063
+    },
+    {
+      "ticker": "XLE",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 120.4,
+      "max_dd": 6.8,
+      "sharpe": 1.44,
+      "trades_pw": 0.044
+    },
+    {
+      "ticker": "VTI",
+      "ma_window": 50,
+      "threshold": 2.0,
+      "total_ret": 25.0,
+      "max_dd": 1.1,
+      "sharpe": 1.2,
+      "trades_pw": 0.015
+    },
+    {
+      "ticker": "XLF",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 50.7,
+      "max_dd": 5.9,
+      "sharpe": 1.14,
+      "trades_pw": 0.024
+    },
+    {
+      "ticker": "XLI",
+      "ma_window": 20,
+      "threshold": 5.0,
+      "total_ret": 44.8,
+      "max_dd": 5.8,
+      "sharpe": 1.13,
+      "trades_pw": 0.02
+    }
+  ],
+  "recommended_harness_config": {
+    "note": "Best momentum picks within 2\u20133% threshold band, weekly-data backtest 2022-2025",
+    "tickers": [
+      "TSM",
+      "XLK",
+      "CAT"
+    ],
+    "buy_threshold_pct": 0.025
+  }
+}
