@@ -1149,3 +1149,5 @@
 {"timestamp": "2026-09-20T01:26:35.566559", "event": "no_action", "prices": {"TSM": 64.95, "XLK": 103.1, "CAT": 94.71, "XLE": 95.71}}
 {"timestamp": "2026-09-20T01:26:35.566658", "event": "breaker_check", "ok": true, "detail": "ok, down 0.4% today", "account_value": 1175.23}
 {"timestamp": "2026-09-20T01:26:35.566742", "event": "no_action", "prices": {"TSM": 64.72, "XLK": 101.35, "CAT": 93.55, "XLE": 96.48}}
+{"timestamp": "2026-09-20T02:14:47.939384", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 1000.0}
+{"timestamp": "2026-09-20T02:14:47.939686", "event": "no_action", "prices": {"TSM": 434.54, "XLK": 189.64, "CAT": 808.855, "XLE": 64.32}}
