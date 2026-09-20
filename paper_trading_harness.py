@@ -37,6 +37,7 @@ Nothing in this file talks to a network. It's safe to run as-is.
 
 import json
 import logging
+import os
 import random
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -144,18 +145,71 @@ class MockBroker:
                 "shares": shares, "price": price}
 
 
-# TODO (Claude Code, later): class RobinhoodBroker with the same four
-# methods, backed by real Robinhood Trading MCP tool calls instead of
-# in-memory math. Nothing below this line should need to change.
-#
-# !! WHEN YOU ADD RobinhoodBroker: the __main__ block below sets
-# !! cfg.require_human_approval = False as a paper-mode-only override, so
-# !! MockBroker runs auto-execute and produces a real track record instead
-# !! of every signal dead-ending at "awaiting_approval" forever. That
-# !! override MUST be removed (or set back to True) the moment
-# !! RobinhoodBroker replaces MockBroker in __main__. Real money must
-# !! never execute without a real, interactive approval step -- and no
-# !! such step exists yet. Do not skip this when doing the broker swap.
+class RobinhoodBroker:
+    """Live broker backed by the Robinhood Trading MCP.
+
+    Python cannot call MCP tools directly — those calls happen in the Claude
+    Routine agent. This class bridges the two via JSON sidecar files:
+
+      robinhood_input.json         ← Routine writes BEFORE running the script.
+                                     Contains: account_number, prices (last_trade_price
+                                     per ticker), buying_power, equity, positions
+                                     (list of {symbol, quantity} for non-zero holdings).
+
+      robinhood_pending_order.json ← This class writes when place_order() fires.
+                                     Contains: ticker, side, dollar_amount.
+                                     Routine reads it AFTER the script exits, calls
+                                     review_equity_order then place_equity_order.
+
+    Routine orchestration (see the Routine prompt in the repo root):
+      1. MCP: get_equity_quotes + get_portfolio + get_equity_positions
+      2. Write robinhood_input.json
+      3. Run: BROKER=robinhood python paper_trading_harness.py
+      4. If robinhood_pending_order.json exists: review + place via MCP
+      5. Commit and push robinhood_state.json + harness_log.jsonl
+    """
+
+    INPUT_PATH = Path("robinhood_input.json")
+    PENDING_ORDER_PATH = Path("robinhood_pending_order.json")
+
+    def __init__(self, tickers: list[str]):
+        inp = json.loads(self.INPUT_PATH.read_text())
+        self.account_number: str = inp["account_number"]
+        self._prices: dict[str, float] = {k: float(v) for k, v in inp["prices"].items()}
+        self.cash: float = float(inp["buying_power"])
+        self._equity: float = float(inp["equity"])
+        self.positions: dict[str, float] = {t: 0.0 for t in tickers}
+        for pos in inp.get("positions", []):
+            sym = pos["symbol"]
+            if sym in self.positions:
+                self.positions[sym] = float(pos["quantity"])
+
+    def load_state(self, cash: float, positions: dict[str, float],
+                   prices: dict[str, float]) -> None:
+        # No-op: cash/positions/prices come from robinhood_input.json (live Robinhood
+        # state), not from the persisted JSON file. price_history and breaker state
+        # are still loaded from the state file by the caller before this is invoked.
+        pass
+
+    def current_prices(self) -> dict[str, float]:
+        return dict(self._prices)
+
+    def get_prices(self) -> dict[str, float]:
+        # Prices were already fetched by the Routine; no random walk, no mutation.
+        return dict(self._prices)
+
+    def get_account_value(self) -> float:
+        return round(self._equity, 2)
+
+    def place_order(self, ticker: str, side: str, dollar_amount: float) -> dict:
+        order = {
+            "ticker": ticker,
+            "side": side,
+            "dollar_amount": round(dollar_amount, 2),
+        }
+        self.PENDING_ORDER_PATH.write_text(json.dumps(order, indent=2))
+        return {"status": "pending_mcp_execution", "ticker": ticker,
+                "side": side, "dollar_amount": dollar_amount}
 
 
 # ---------------------------------------------------------------------------
@@ -221,7 +275,7 @@ def load_portfolio_state(config: Config) -> dict:
     }
 
 
-def save_portfolio_state(config: Config, broker: MockBroker, breaker: CircuitBreaker,
+def save_portfolio_state(config: Config, broker, breaker: CircuitBreaker,
                           price_history: dict[str, list[float]]) -> None:
     breaker_state = breaker.to_state()
     state = {
@@ -508,22 +562,29 @@ def tick(config: Config, broker: MockBroker, breaker: CircuitBreaker,
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     cfg = Config()
-
-    # PAPER-MODE-ONLY OVERRIDE. Config's real default is True (mirrors
-    # Robinhood's approval-required mode) -- but no interactive approval
-    # step exists yet, so leaving it True here just means every signal
-    # logs "awaiting_approval" and nothing ever actually trades, forever.
-    # Auto-execute against MockBroker so a real (fake-money) track record
-    # accumulates. See the loud warning above RobinhoodBroker's TODO:
-    # this line must go away the moment real money is involved.
-    cfg.require_human_approval = False
-
     params = StrategyParams()
 
-    state = load_portfolio_state(cfg)
+    broker_mode = os.environ.get("BROKER", "mock").lower()
 
-    # seed=None -> real randomness each run, not the same replayed sequence
-    broker = MockBroker(cfg.tickers, cfg.starting_cash, seed=None)
+    if broker_mode == "robinhood":
+        # Live Robinhood Agentic account. State file only carries price_history
+        # and circuit-breaker state; cash/positions/prices come from the Routine
+        # via robinhood_input.json. require_human_approval stays False here
+        # because the Routine calls review_equity_order before place_equity_order,
+        # which is the real pre-trade gate for live money.
+        cfg.state_path = Path("robinhood_state.json")
+        cfg.require_human_approval = False
+        broker = RobinhoodBroker(cfg.tickers)
+        n_ticks = 1  # one real-market tick per Routine invocation
+    else:
+        # Mock / paper mode. PAPER-MODE-ONLY OVERRIDE: require_human_approval
+        # is set to False so signals auto-execute against MockBroker and build
+        # a track record. This line must not carry over to the robinhood path.
+        cfg.require_human_approval = False
+        broker = MockBroker(cfg.tickers, cfg.starting_cash, seed=None)
+        n_ticks = 5  # 5 ticks per local test run
+
+    state = load_portfolio_state(cfg)
     broker.load_state(state["cash"], state["positions"], state["prices"])
 
     breaker = CircuitBreaker(cfg.daily_loss_limit_pct)
@@ -531,8 +592,9 @@ if __name__ == "__main__":
 
     price_history = state["price_history"]
 
-    for i in range(5):
-        print(f"\n--- tick {i + 1} ---")
+    for i in range(n_ticks):
+        if n_ticks > 1:
+            print(f"\n--- tick {i + 1} ---")
         tick(cfg, broker, breaker, price_history, params)
 
     save_portfolio_state(cfg, broker, breaker, price_history)
