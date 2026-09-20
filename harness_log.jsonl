@@ -1129,3 +1129,13 @@
 {"timestamp": "2026-09-19T20:34:12.281479", "event": "no_action", "prices": {"TSM": 69.32, "XLK": 101.79, "CAT": 99.73, "XLE": 100.64}}
 {"timestamp": "2026-09-19T20:34:12.281622", "event": "breaker_check", "ok": true, "detail": "ok, down -2.9% today", "account_value": 1189.94}
 {"timestamp": "2026-09-19T20:34:12.281738", "event": "no_action", "prices": {"TSM": 67.78, "XLK": 99.04, "CAT": 100.09, "XLE": 99.04}}
+{"timestamp": "2026-09-20T00:18:19.999896", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 1180.31}
+{"timestamp": "2026-09-20T00:18:20.000175", "event": "no_action", "prices": {"TSM": 69.38, "XLK": 101.18, "CAT": 101.05, "XLE": 96.96}}
+{"timestamp": "2026-09-20T00:18:20.000325", "event": "breaker_check", "ok": true, "detail": "ok, down -0.5% today", "account_value": 1185.98}
+{"timestamp": "2026-09-20T00:18:20.000434", "event": "no_action", "prices": {"TSM": 70.49, "XLK": 103.05, "CAT": 102.48, "XLE": 96.21}}
+{"timestamp": "2026-09-20T00:18:20.000514", "event": "breaker_check", "ok": true, "detail": "ok, down -0.9% today", "account_value": 1191.08}
+{"timestamp": "2026-09-20T00:18:20.000596", "event": "no_action", "prices": {"TSM": 70.22, "XLK": 104.72, "CAT": 99.88, "XLE": 97.86}}
+{"timestamp": "2026-09-20T00:18:20.000664", "event": "breaker_check", "ok": true, "detail": "ok, down -1.2% today", "account_value": 1194.21}
+{"timestamp": "2026-09-20T00:18:20.000750", "event": "no_action", "prices": {"TSM": 68.65, "XLK": 105.52, "CAT": 98.71, "XLE": 98.02}}
+{"timestamp": "2026-09-20T00:18:20.000836", "event": "breaker_check", "ok": true, "detail": "ok, down -0.9% today", "account_value": 1191.18}
+{"timestamp": "2026-09-20T00:18:20.000939", "event": "order_result", "decision": {"ticker": "XLK", "side": "sell", "dollar_amount": 74.37, "reason": "XLK down -2.59% since last tick, past -2% threshold \u2014 trimming"}, "result": {"status": "filled", "ticker": "XLK", "side": "sell", "shares": 0.7235, "price": 102.79}}
