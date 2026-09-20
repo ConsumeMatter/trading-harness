@@ -66,9 +66,24 @@ class StrategyParams:
     """Tunables for decide(). Kept separate from Config: these are
     strategy knobs (what counts as a signal), not harness/broker plumbing
     (how much cash, what account, what safety limits)."""
-    # Momentum path (applied to tickers the regime filter calls "trending")
-    buy_threshold_pct: float = 0.025         # propose a buy on a move up this big
-    sell_threshold_pct: float = 0.025        # propose trimming on a move down this big
+    # Momentum path (applied to tickers the regime filter calls "trending").
+    # Per-ticker thresholds calibrated from real-data weekly vol (rv52_ann_pct)
+    # scaled to daily cadence: threshold ≈ target_weekly_signal_freq_matched_daily_sigma.
+    # buy_threshold_default / sell_threshold_default are used for any ticker not in the dict.
+    buy_threshold_pct: dict = field(default_factory=lambda: {
+        "TSM": 0.047,   # daily σ 2.39% → 4.7% ≈ 1.97σ ≈ 6 buy signals/yr
+        "XLK": 0.033,   # daily σ 1.61% → 3.3% ≈ 2.05σ ≈ 5 buy signals/yr
+        "CAT": 0.040,   # daily σ 2.05% → 4.0% ≈ 1.95σ ≈ 6 buy signals/yr
+        "XLE": 0.040,   # daily σ 1.50% — MR primary; 4.0% used if regime = trending
+    })
+    buy_threshold_default: float = 0.040    # fallback for tickers not in dict above
+    sell_threshold_pct: dict = field(default_factory=lambda: {
+        "TSM": 0.047,
+        "XLK": 0.033,
+        "CAT": 0.040,
+        "XLE": 0.040,
+    })
+    sell_threshold_default: float = 0.040   # fallback for tickers not in dict above
     buy_fraction_of_cash: float = 0.10       # size a buy as this fraction of cash
     sell_fraction_of_position: float = 0.50  # trim this fraction of the held position
     # Mean-reversion path (applied to tickers the regime filter calls "mean_reverting")
@@ -472,7 +487,10 @@ def decide(
     candidates.sort(key=lambda c: abs(c[1]), reverse=True)
     ticker, pct_change = candidates[0]
 
-    if pct_change >= params.buy_threshold_pct:
+    buy_thresh = params.buy_threshold_pct.get(ticker, params.buy_threshold_default)
+    sell_thresh = params.sell_threshold_pct.get(ticker, params.sell_threshold_default)
+
+    if pct_change >= buy_thresh:
         dollar_amount = round(cash * params.buy_fraction_of_cash, 2)
         if dollar_amount <= 0:
             return None
@@ -481,10 +499,10 @@ def decide(
             "side": "buy",
             "dollar_amount": dollar_amount,
             "reason": (f"{ticker} up {pct_change:.2%} since last tick, "
-                       f"above +{params.buy_threshold_pct:.0%} threshold"),
+                       f"above +{buy_thresh:.1%} threshold"),
         }
 
-    if pct_change <= -params.sell_threshold_pct:
+    if pct_change <= -sell_thresh:
         held_shares = positions.get(ticker, 0.0)
         if held_shares <= 0:
             return None  # nothing held to trim
@@ -497,7 +515,7 @@ def decide(
             "side": "sell",
             "dollar_amount": dollar_amount,
             "reason": (f"{ticker} down {pct_change:.2%} since last tick, "
-                       f"past -{params.sell_threshold_pct:.0%} threshold — trimming"),
+                       f"past -{sell_thresh:.1%} threshold — trimming"),
         }
 
     return None
