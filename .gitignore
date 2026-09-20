@@ -1,0 +1,7 @@
+# Robinhood sidecar files — ephemeral per-tick data, not repo state
+robinhood_input.json
+robinhood_pending_order.json
+
+# Python
+__pycache__/
+*.pyc
