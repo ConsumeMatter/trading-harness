@@ -1,0 +1,31 @@
+{
+  "cash": 1000.0,
+  "positions": {
+    "TSM": 0.0,
+    "XLK": 0.0,
+    "CAT": 0.0,
+    "XLE": 0.0
+  },
+  "prices": {
+    "TSM": 434.54,
+    "XLK": 189.64,
+    "CAT": 808.855,
+    "XLE": 64.32
+  },
+  "price_history": {
+    "TSM": [
+      434.54
+    ],
+    "XLK": [
+      189.64
+    ],
+    "CAT": [
+      808.855
+    ],
+    "XLE": [
+      64.32
+    ]
+  },
+  "breaker_day": "2026-09-20",
+  "breaker_day_start_value": 1000.0
+}
