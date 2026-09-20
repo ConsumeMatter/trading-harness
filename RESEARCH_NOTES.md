@@ -37,9 +37,11 @@ Method: annualized vol from research → daily sigma (ann_vol / √252) → thre
 | TSM    | 37.9%    | 2.39%   | ~6.2/yr        | **4.7%**        |
 | XLK    | 25.5%    | 1.61%   | ~5.3/yr        | **3.3%**        |
 | CAT    | 32.5%    | 2.05%   | ~6.1/yr        | **4.0%**        |
-| XLE    | 23.8%    | 1.50%   | MR primary     | **4.0%** (CAT proxy) |
+| XLE    | 23.8%    | 1.50%   | MR primary     | **4.0%** ⚠ placeholder — see note below |
 
 Assumptions: normal returns, 50/50 buy/sell split in weekly trades_pw, open-to-open vol ≈ close-to-close vol. Daily returns are fat-tailed, so actual extreme-move frequency is somewhat higher than the normal approximation; thresholds may be slightly low in practice.
+
+**XLE note:** The research validated XLE exclusively as a mean-reversion ticker (Sharpe 1.87 on MR; XLE was not in the momentum candidate set). The 4.0% momentum threshold for XLE is a **placeholder** — it borrows CAT's value so the harness doesn't fire noise signals on XLE during the cold-start period before MR activates. Once the MR path is live (~50 ticks, late January 2027 at daily cadence), XLE's momentum threshold entry should be revisited: either remove it from the momentum path entirely (by routing XLE to MR-only) or set it high enough that momentum signals are effectively suppressed.
 
 ## Open items
 

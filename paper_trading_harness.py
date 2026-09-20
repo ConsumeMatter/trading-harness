@@ -74,14 +74,15 @@ class StrategyParams:
         "TSM": 0.047,   # daily σ 2.39% → 4.7% ≈ 1.97σ ≈ 6 buy signals/yr
         "XLK": 0.033,   # daily σ 1.61% → 3.3% ≈ 2.05σ ≈ 5 buy signals/yr
         "CAT": 0.040,   # daily σ 2.05% → 4.0% ≈ 1.95σ ≈ 6 buy signals/yr
-        "XLE": 0.040,   # daily σ 1.50% — MR primary; 4.0% used if regime = trending
+        "XLE": 0.040,   # PLACEHOLDER — XLE is MR-primary (research Sh 1.87); 4.0% suppresses
+                        # noise momentum signals during MR cold-start (~50 ticks). Revisit once MR activates.
     })
     buy_threshold_default: float = 0.040    # fallback for tickers not in dict above
     sell_threshold_pct: dict = field(default_factory=lambda: {
         "TSM": 0.047,
         "XLK": 0.033,
         "CAT": 0.040,
-        "XLE": 0.040,
+        "XLE": 0.040,   # PLACEHOLDER — same rationale as buy_threshold_pct["XLE"] above
     })
     sell_threshold_default: float = 0.040   # fallback for tickers not in dict above
     buy_fraction_of_cash: float = 0.10       # size a buy as this fraction of cash
