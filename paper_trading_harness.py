@@ -129,7 +129,17 @@ class MockBroker:
         return dict(self._prices)
 
     def get_prices(self) -> dict[str, float]:
-        """Mock a market tick: each price randomly drifts a bit."""
+        """Return prices. Reads robinhood_input.json when available (real market
+        data written by the Routine); falls back to random walk for local testing."""
+        input_path = Path("robinhood_input.json")
+        if input_path.exists():
+            try:
+                data = json.loads(input_path.read_text())
+                if "prices" in data:
+                    self._prices.update(data["prices"])
+                    return dict(self._prices)
+            except (json.JSONDecodeError, KeyError):
+                pass
         for t in self._prices:
             pct_move = self._rng.uniform(-0.03, 0.03)  # +/- 3% per tick
             self._prices[t] = round(self._prices[t] * (1 + pct_move), 2)
@@ -596,12 +606,15 @@ if __name__ == "__main__":
         broker = RobinhoodBroker(cfg.tickers)
         n_ticks = 1  # one real-market tick per Routine invocation
     else:
-        # Mock / paper mode. PAPER-MODE-ONLY OVERRIDE: require_human_approval
-        # is set to False so signals auto-execute against MockBroker and build
-        # a track record. This line must not carry over to the robinhood path.
+        # Mock / paper mode. Real prices come from robinhood_input.json (written
+        # by the Routine); state persists to robinhood_state.json so price history
+        # and paper cash survive across ticks. require_human_approval stays False
+        # so signals auto-execute against MockBroker and build a track record.
+        # This block must never call place_equity_order or write robinhood_pending_order.json.
         cfg.require_human_approval = False
+        cfg.state_path = Path("robinhood_state.json")
         broker = MockBroker(cfg.tickers, cfg.starting_cash, seed=None)
-        n_ticks = 5  # 5 ticks per local test run
+        n_ticks = 1  # one tick per Routine invocation; run script repeatedly for local testing
 
     state = load_portfolio_state(cfg)
     broker.load_state(state["cash"], state["positions"], state["prices"])
