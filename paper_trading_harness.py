@@ -364,6 +364,14 @@ def _classify_regime(history: list[float], params: StrategyParams) -> str:
     return "mean_reverting"
 
 
+# Labels written to the tick log: the path each ticker is routed down.
+_REGIME_LOG_LABELS = {
+    "trending": "momentum",
+    "mean_reverting": "mean_reversion",
+    "insufficient_data": "insufficient_data",
+}
+
+
 def _mr_signal(
     ticker: str,
     current_price: float,
@@ -548,6 +556,10 @@ def tick(config: Config, broker: MockBroker, breaker: CircuitBreaker,
         return  # circuit breaker tripped — do nothing else this tick
 
     prices = broker.get_prices()
+    # Per-ticker regime for the tick log; computed from pre-update history,
+    # the same view decide() classifies from.
+    regimes = {t: _REGIME_LOG_LABELS[_classify_regime(price_history.get(t, []), params)]
+               for t in prices}
     decision = decide(prices, broker.positions, broker.cash, price_history, params)
 
     # Record this tick's prices into history AFTER decide() has run, so
@@ -557,7 +569,7 @@ def tick(config: Config, broker: MockBroker, breaker: CircuitBreaker,
         price_history[t] = price_history[t][-config.price_history_len:]
 
     if decision is None:
-        log_event(config, {"event": "no_action", "prices": prices})
+        log_event(config, {"event": "no_action", "prices": prices, "regimes": regimes})
         return
 
     # Position sizing guardrail — enforced here, not left to the strategy
@@ -573,12 +585,14 @@ def tick(config: Config, broker: MockBroker, breaker: CircuitBreaker,
         # In mock mode this just logs the proposal. In Claude Code, this is
         # the hook where you'd surface the proposed trade and wait for a
         # real yes/no before ever calling broker.place_order().
-        log_event(config, {"event": "awaiting_approval", "proposed": decision})
+        log_event(config, {"event": "awaiting_approval", "prices": prices,
+                            "regimes": regimes, "proposed": decision})
         return
 
     result = broker.place_order(decision["ticker"], decision["side"],
                                  decision["dollar_amount"])
-    log_event(config, {"event": "order_result", "decision": decision, "result": result})
+    log_event(config, {"event": "order_result", "prices": prices, "regimes": regimes,
+                        "decision": decision, "result": result})
 
 
 # ---------------------------------------------------------------------------
