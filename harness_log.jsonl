@@ -1171,3 +1171,5 @@
 {"timestamp": "2026-10-01T13:44:59.037286", "event": "no_action", "prices": {"TSM": 456.11, "XLK": 197.0, "CAT": 807.15, "XLE": 61.57}}
 {"timestamp": "2026-10-02T13:45:08.936540", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 1000.0}
 {"timestamp": "2026-10-02T13:45:08.936973", "event": "order_result", "decision": {"ticker": "CAT", "side": "buy", "dollar_amount": 100.0, "reason": "CAT up 6.15% since last tick, above +4.0% threshold"}, "result": {"status": "filled", "ticker": "CAT", "side": "buy", "shares": 0.1167, "price": 856.77}}
+{"timestamp": "2026-10-05T13:45:19.084095", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 1000.0}
+{"timestamp": "2026-10-05T13:45:19.084619", "event": "no_action", "prices": {"TSM": 479.135, "XLK": 201.08, "CAT": 825.525, "XLE": 62.115}, "regimes": {"TSM": "insufficient_data", "XLK": "insufficient_data", "CAT": "insufficient_data", "XLE": "insufficient_data"}}
