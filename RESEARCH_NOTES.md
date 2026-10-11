@@ -41,13 +41,13 @@ Method: annualized vol from research → daily sigma (ann_vol / √252) → thre
 
 Assumptions: normal returns, 50/50 buy/sell split in weekly trades_pw, open-to-open vol ≈ close-to-close vol. Daily returns are fat-tailed, so actual extreme-move frequency is somewhat higher than the normal approximation; thresholds may be slightly low in practice.
 
-**XLE note:** The research validated XLE exclusively as a mean-reversion ticker (Sharpe 1.87 on MR; XLE was not in the momentum candidate set). The 4.0% momentum threshold for XLE is a **placeholder** — it borrows CAT's value so the harness doesn't fire noise signals on XLE during the cold-start period before MR activates. Once the MR path is live (~50 ticks, late January 2027 at daily cadence), XLE's momentum threshold entry should be revisited: either remove it from the momentum path entirely (by routing XLE to MR-only) or set it high enough that momentum signals are effectively suppressed.
+**XLE note:** The research validated XLE exclusively as a mean-reversion ticker (Sharpe 1.87 on MR; XLE was not in the momentum candidate set). The 4.0% momentum threshold for XLE is a **placeholder** — it borrows CAT's value so the harness doesn't fire noise signals on XLE during the cold-start period before MR activates. Once the MR path is live (~50 ticks, around Nov 30 2026 at daily cadence), XLE's momentum threshold entry should be revisited: either remove it from the momentum path entirely (by routing XLE to MR-only) or set it high enough that momentum signals are effectively suppressed.
 
 ## Open items
 
 1. **Daily-granularity backtest unvalidated.** The research covered weekly bars only. The per-ticker daily thresholds above are derived analytically, not from a daily backtest. A daily backtest against the same GitHub CSV data (resampled to daily) would validate or revise these numbers. Requires open egress to Yahoo Finance for finer-grained data, or a daily-resolution CSV source.
 
-2. **XLE mean-reversion path cold-start.** `robinhood_state.json` currently has 1 price history entry per ticker. The regime classifier activates at 20 ticks; the MA-50 MR signal activates at 50 ticks. At once-daily cadence, XLE will run on the momentum path (4.0% threshold) until approximately late November 2026 (regime) and late January 2027 (MR signal).
+2. **XLE mean-reversion path cold-start.** As of the Oct 9 2026 tick, `robinhood_state.json` holds 16 price history entries per ticker. The regime classifier activates at 20 ticks; the MA-50 MR signal activates at 50 ticks (the regime lookback needs 21 prices, so it is first live on the Oct 15 tick). At once-daily cadence, XLE runs on the momentum path (4.0% threshold) until about Nov 30 2026 (MR signal).
 
 3. **Cadence choice undocumented.** The daily-at-open schedule (`30 13 * * 1-5` UTC) was set when the live Routine was created and not explicitly rationalized. It compares today's open to yesterday's open — an overnight-gap + continuation signal. This is a legitimate momentum signal, but it has not been backtested.
 
