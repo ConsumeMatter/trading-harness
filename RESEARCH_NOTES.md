@@ -52,3 +52,23 @@ Assumptions: normal returns, 50/50 buy/sell split in weekly trades_pw, open-to-o
 3. **Cadence choice undocumented.** The daily-at-open schedule (`30 13 * * 1-5` UTC) was set when the live Routine was created and not explicitly rationalized. It compares today's open to yesterday's open — an overnight-gap + continuation signal. This is a legitimate momentum signal, but it has not been backtested.
 
 4. **XLE MR threshold not independently calibrated.** The MR `mr_entry_threshold_pct` (1% deviation from MA-50) came from the weekly backtest (best Sharpe config). It has the same daily-vs-weekly granularity caveat as the momentum thresholds.
+
+## Daily backtest (added Oct 11 2026)
+
+`backtest_daily.py` replays the live `decide()` on Robinhood daily open bars (`research_output/daily_bars.json`, TSM/XLK/CAT/XLE, 2021-01-04 to 2026-10-09, 1449 days). Fills at the open, $1,000 start, live sizing. This closes open items 1 and 3 in part: it is a daily backtest, but of the combined strategy, not the original weekly research.
+
+| Threshold scale | Return | Sharpe | Max DD | Trades/yr |
+|---|---|---|---|---|
+| x0.5 | +17.3% | 0.45 | 12.0% | 93 |
+| x0.75 | +20.8% | 0.54 | 11.6% | 73 |
+| x1.0 (live) | +23.5% | 0.69 | 8.5% | 61 |
+| x1.25 | +26.6% | 0.80 | 8.1% | 56 |
+| x1.5 | +20.9% | 0.68 | 8.1% | 51 |
+
+Equal-weight buy-and-hold over the same window: +274%.
+
+Findings:
+- Live thresholds fire ~9 momentum trades/yr in total (54 in 5.75 yrs), below the ~17 buys/yr targeted; they are not too loose. x1.25 scores best, but the surface is flat, so no change made.
+- The regime filter labels 68% of ticker-days mean-reverting (0.3 efficiency cutoff on daily data). Most trades (298 of 352) come from the MR path, so MR calibration matters more than the momentum thresholds.
+- Returns are far below buy-and-hold because 10% sizing keeps most cash idle. Judge this as a risk-controlled signal test, not a return maximizer.
+- In-sample only, no costs or slippage, one 5.75-year window.
