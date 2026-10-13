@@ -1183,3 +1183,5 @@
 {"timestamp": "2026-10-09T13:44:41.180478", "event": "no_action", "prices": {"TSM": 458.2, "XLK": 197.93, "CAT": 796.255, "XLE": 65.675}, "regimes": {"TSM": "insufficient_data", "XLK": "insufficient_data", "CAT": "insufficient_data", "XLE": "insufficient_data"}}
 {"timestamp": "2026-10-12T13:44:58.464211", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 985.93}
 {"timestamp": "2026-10-12T13:44:58.464724", "event": "no_action", "prices": {"TSM": 450.91, "XLK": 197.33, "CAT": 801.83, "XLE": 66.17}, "regimes": {"TSM": "insufficient_data", "XLK": "insufficient_data", "CAT": "insufficient_data", "XLE": "insufficient_data"}}
+{"timestamp": "2026-10-13T13:44:42.557882", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 987.16}
+{"timestamp": "2026-10-13T13:44:42.558196", "event": "no_action", "prices": {"TSM": 442.5345, "XLK": 195.695, "CAT": 790.78, "XLE": 66.6835}, "regimes": {"TSM": "insufficient_data", "XLK": "insufficient_data", "CAT": "insufficient_data", "XLE": "insufficient_data"}}
