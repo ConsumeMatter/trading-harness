@@ -1195,3 +1195,5 @@
 {"timestamp": "2026-10-19T13:45:14.458530", "event": "no_action", "prices": {"TSM": 416.63, "XLK": 186.33, "CAT": 726.22, "XLE": 68.375}, "regimes": {"TSM": "mean_reversion", "XLK": "mean_reversion", "CAT": "mean_reversion", "XLE": "mean_reversion"}}
 {"timestamp": "2026-10-20T13:35:16.953078", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 966.76}
 {"timestamp": "2026-10-20T13:35:16.953796", "event": "no_action", "prices": {"TSM": 417.7175, "XLK": 183.915, "CAT": 708.75, "XLE": 68.245}, "regimes": {"TSM": "mean_reversion", "XLK": "mean_reversion", "CAT": "mean_reversion", "XLE": "momentum"}}
+{"timestamp": "2026-10-21T13:33:03.360245", "event": "breaker_check", "ok": true, "detail": "new trading day, breaker reset", "account_value": 962.74}
+{"timestamp": "2026-10-21T13:33:03.361281", "event": "no_action", "prices": {"TSM": 433.345, "XLK": 187.215, "CAT": 737.14, "XLE": 67.97}, "regimes": {"TSM": "mean_reversion", "XLK": "momentum", "CAT": "mean_reversion", "XLE": "momentum"}}
