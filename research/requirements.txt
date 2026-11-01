@@ -1,0 +1,2 @@
+skfolio>=1.12
+pandas
