@@ -2,7 +2,7 @@
 (research_output/daily_bars.json). Fills at the open, one trade per day, same
 sizing as the live harness. Usage: python backtest_daily.py"""
 import json, dataclasses, math
-from paper_trading_harness import decide, StrategyParams, _classify_regime
+from research.momentum_archive import decide, StrategyParams, _classify_regime
 
 BARS = json.load(open("research_output/daily_bars.json"))
 T = ["TSM", "XLK", "CAT", "XLE"]

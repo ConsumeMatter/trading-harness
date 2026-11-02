@@ -12,7 +12,7 @@ REPO = str(Path(__file__).resolve().parents[1])
 COST = float(sys.argv[1]) if len(sys.argv) > 1 else 0.0005
 START_IDX = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 sys.path.insert(0, REPO)
-from paper_trading_harness import decide, StrategyParams  # noqa: E402
+from research.momentum_archive import decide, StrategyParams  # noqa: E402
 
 BARS = json.load(open(f"{REPO}/research_output/daily_bars.json"))
 T = ["TSM", "XLK", "CAT", "XLE"]
