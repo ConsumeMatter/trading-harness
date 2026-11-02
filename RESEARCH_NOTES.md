@@ -1,5 +1,10 @@
 # Research Notes — Trading Harness
 
+> **Status (2026-11-02):** The momentum / mean-reversion strategy described below is retired.
+> The harness is now a drift-band rebalancer for Portfolio B (VTI 60.0%, XLU 17.8%, XLI 14.3%,
+> SMH 7.9%); see `README.md` and `research/portfolio_candidates.py`. The notes below are kept as
+> the record of the retired strategy; its code lives in `research/momentum_archive.py`.
+
 ## Data source
 
 Real weekly OHLCV prices from two public GitHub repositories:
